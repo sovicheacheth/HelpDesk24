@@ -14,6 +14,6 @@ public class ProgressController {
 	public String createTicket(Model model) {
 		Ticket newticket = new Ticket();
 		model.addAttribute("ticket", newticket);		
-		return "newTicket";
+		return "ticketProgress";
 	}
 }
