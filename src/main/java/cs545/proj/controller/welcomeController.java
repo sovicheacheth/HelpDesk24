@@ -11,6 +11,6 @@ public class welcomeController {
 	@RequestMapping("/")
 	public String listMembers(Model model) {
 		model.addAttribute("categories", "kedirosa");
-		return "index.jsp";
+		return "index";
 	}
 }
