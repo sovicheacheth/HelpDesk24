@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<security:global-method-security pre-post-annotations="enabled" />
+
+	<security:http pattern="/resources/**" security="none" />
+
+	<security:http use-expressions="true">
+
+		<security:csrf disabled="true"/>
+		
+		<security:intercept-url pattern="/**" access="hasRole('ROLE_ANONYMOUS')" />
+		
+		
+		<security:intercept-url pattern="/*" access="hasAnyRole('ROLE_ANONYMOUS', 'ROLE_ORGANIZATION', 'ROLE_MEMBER', 'ROLE_EMPLOYEE', 'ROLE_ADMIN')" />
+		<security:intercept-url pattern="/tender/all" access="hasAnyRole('ROLE_ANONYMOUS', 'ROLE_ORGANIZATION', 'ROLE_MEMBER', 'ROLE_EMPLOYEE', 'ROLE_ADMIN')" />
+		<security:intercept-url pattern="/tender/new" access="hasAnyRole('ROLE_ORGANIZATION', 'ROLE_EMPLOYEE', 'ROLE_ADMIN')" />
+		<security:intercept-url pattern="/tender/**" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ORGANIZATION', 'ROLE_EMPLOYEE', 'ROLE_ADMIN')" />
+		<security:intercept-url pattern="/member/register" access="hasRole('ROLE_ANONYMOUS')" />
+		<security:intercept-url pattern="/member/new" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ORGANIZATION')" />
+		<security:intercept-url pattern="/member/detail" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ORGANIZATION')" />
+		<security:intercept-url pattern="/member/selfedit" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ORGANIZATION')" />
+		
+		
+		<security:form-login login-page="/loginPage"
+			login-processing-url="/doLogin"
+			default-target-url="/home"
+			always-use-default-target="true"
+			authentication-failure-url="/loginFailed"
+			username-parameter="username"
+			password-parameter="password" />
+
+		<security:logout logout-url="/doLogout"
+			logout-success-url="/logoutSuccess"
+			delete-cookies="JSESSIONID"  />
+
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:password-encoder hash="bcrypt" />
+			<security:jdbc-user-service
+				data-source-ref="dataSource"
+				users-by-username-query="select username, password, true as enabled from account where username = ?"
+				authorities-by-username-query="select u.username, ur.roleSet as authority from user u, user_roleset ur where u.id = ur.User_id and u.username = ?" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>

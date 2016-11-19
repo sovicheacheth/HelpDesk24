@@ -1,0 +1,304 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: Arial;
+	margin: 0;
+	padding: 0;
+}
+
+#mainDiv {
+	max-width: 1000px;
+	min-width: 800px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#topBanner {
+	display: table;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#logoImg {
+	display: table-cell;
+	text-align: left;
+	vertical-align: middle;
+}
+
+#naviDiv {
+	display: table-cell;
+	text-align: right;
+	vertical-align: middle;
+}
+
+#naviDiv ul {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+#naviDiv ul li {
+	position: relative;
+	display: inline-block;
+	color: #0078D7;
+}
+
+#naviDiv ul li a {
+	padding: 10px 15px;
+}
+
+#naviDiv ul li a:hover, #naviDiv ul li a:focus {
+	text-decoration: none;
+	color: #FFFFFF;
+	background-color: #0078D7;
+}
+
+#naviLogin {
+	color: #FFFFFF;
+	background-color: #0078D7;
+}
+
+#naviLogin a {
+	color: #FFFFFF;
+	background-color: #0078D7;
+	text-decoration: none;
+}
+
+#naviLogin:hover, #naviLogin:focus {
+	opacity: 0.75;
+}
+
+#headerDiv {
+	display: table;
+	width: 100%;
+	color: #FFFFFF;
+	background-color: #0078D7;
+}
+
+#headerCellLeft {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	line-height: 50px;
+	padding-left: 10px;
+}
+
+#headerCellSpan01 {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.3em;
+}
+
+#headerCellSpan02 {
+	font-size: 1.1em;
+}
+
+#headerCellRight {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+	padding-right: 10px;
+}
+
+#viewProfileSpan {
+	font-weight: bold;
+	color: #FFFF00;
+}
+
+#viewProfileSpan a {
+	color: #FFFF00;
+}
+
+#contentDiv {
+	display: table;
+	width: 100%;
+}
+
+#leftDiv {
+	width: 220px;
+	display: table-cell;
+	vertical-align: top;
+	background-color: #eeeeee;
+	text-align: center;
+	padding: 5px;
+	height: 450px;
+}
+
+#centerDiv {
+	display: table-cell;
+	vertical-align: top;
+	padding: 5px;
+	height: 450px;
+}
+
+#rightDiv {
+	width: 220px;
+	display: table-cell;
+	vertical-align: top;
+	background-color: #eeeeee;
+	text-align: center;
+	padding: 5px;
+	height: 450px;
+}
+
+#footerDiv {
+	color: #FFFFFF;
+	background-color: #0078D7;
+	text-align: center;
+	padding: 5px;
+}
+
+#footerDiv a {
+	color: #FFFF00;
+}
+
+#checkboxesDiv label {
+	padding-right: 15px;
+}
+
+#formInput {
+	position:absolute;
+    top:  200px;
+    left: 500px;
+	background-color:LightCyan;	
+	width:375px;
+	height:270px;
+	z-index: 9002;
+   	border-style: solid;
+    border-color: blue;
+}
+
+ #result {
+	position:absolute;
+    top:  50px;
+    left: 500px;
+	background-color:LightBlue;	
+	width:375px;
+	height:175px;
+	z-index: 9002;
+   	border-style: solid;
+    border-color: blue;
+}
+
+.h2Error {
+	text-align: center;
+	color: red;
+}
+
+.h2Info {
+	text-align: center;
+	color: blue;
+}
+
+.categoryDiv {
+	padding: 10px;
+	text-decoration: underline;
+}
+
+.categoryDiv:hover, .categoryDiv:focus {
+	color: #FFFFFF;
+	background-color: #0078D7;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.categoryDivSelected {
+	padding: 10px;
+	color: #FFFFFF;
+	background-color: #0078D7;
+}
+
+.categoryDivSelected:hover, .categoryDivSelected:focus {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+input[type="submit"] {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+button {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+legend {
+	font-size: 1.2em;
+}
+
+.formErrorInfo {
+	color: red;
+}
+
+.form-group {
+	padding: 10px;
+}
+
+.welCategory {
+	display: inline-block;
+	padding: 20px;
+}
+
+.welTenderLi {
+	padding-bottom: 20px;
+}
+
+#centerDiv h2 {
+	text-align: center;
+	padding: 0;
+	margin: 5px;
+}
+
+.buttonLikeDiv {
+	display: inline-block;
+	padding: 10px;
+	color: #FFFFFF;
+	background-color: #0078D7;
+	font-size: 1.1em;
+}
+
+.buttonLikeDiv:hover, .buttonLikeDiv:focus {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#tenderListDiv {
+	padding-left: 5px;
+}
+
+#searchInput {
+	font-size: 1.0em;
+}
+
+.padding5pxDiv {
+	padding: 5px;
+}
+
+.deadlineDiv {
+	color: #800000;
+}
+
+.textAlignRightDiv {
+	text-align: right;
+}
+
+.inlineList {
+	display: inline-block;
+	padding: 10px;
+}
+
+.blueInfo {
+	display: inline-block;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: left;
+	color: blue;
+	padding: 10px;
+}
+
+#centerDiv table {
+	text-align: center;
+}
