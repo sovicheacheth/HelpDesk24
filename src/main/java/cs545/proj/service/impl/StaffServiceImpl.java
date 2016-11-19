@@ -31,9 +31,10 @@ public class StaffServiceImpl implements StaffService {
 	}
 
 	@Override
-	//implement the @query in the service class 
+	
+	
 	public Staff getStaffByFirstName(String name) {
-		return null;
+		return staffRepo.findbyFirstName(name);
 	}
 
 }
