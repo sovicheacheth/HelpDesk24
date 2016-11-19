@@ -10,7 +10,7 @@ public class welcomeController {
 
 	@RequestMapping("/")
 	public String listMembers(Model model) {
-		model.addAttribute("categories", "kedirosa");
+		model.addAttribute("categories", "mahilet");
 		return "index";
 	}
 }
