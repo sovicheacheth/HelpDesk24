@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import cs545.proj.domain.Status;
 import cs545.proj.domain.TicketProgress;
 import cs545.proj.repository.TicketProgressRepository;
 import cs545.proj.service.TicketProgressService;
@@ -36,5 +37,13 @@ public class progressServiceImpl  implements TicketProgressService{
 		
 		return null;
 	}
+
+	@Override
+	public List<Status> getTicketStatus(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }
