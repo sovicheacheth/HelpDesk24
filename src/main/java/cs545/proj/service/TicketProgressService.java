@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import cs545.proj.domain.Status;
 import cs545.proj.domain.TicketProgress;
 
 
@@ -15,4 +16,5 @@ public interface TicketProgressService {
 	public List<TicketProgress> getProgressList();
 	public TicketProgress getProgressTicketId(int id);
 	public TicketProgress getProgressByStaffId(String name);
+	public List<Status> getTicketStatus(int id);
 }
