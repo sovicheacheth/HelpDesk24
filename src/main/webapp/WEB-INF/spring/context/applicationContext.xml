@@ -43,7 +43,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/helpdesk24?useSSL=false&amp;createDatabaseIfNotExist=true" />
 		<property name="username" value="root" />
-		<property name="password" value="kedirosa" />
+		<property name="password" value="root" />
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
