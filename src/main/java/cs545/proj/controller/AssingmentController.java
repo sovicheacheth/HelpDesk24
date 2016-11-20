@@ -13,13 +13,12 @@ import cs545.proj.service.TicketService;
 @Controller
 public class AssingmentController {
 
-	@Autowired
-	private TicketService ticketService;
+//	@Autowired
+
 
 	@RequestMapping(value = "/ticketAssignment={id}", method = RequestMethod.GET)
 	public String assignTicket(@PathVariable("id") int id, Model model) {
 		model.addAttribute("enum", Priority.values());
-		model.addAttribute("ticket_id", ticketService.getTicketById(id));
 
 		return "ticketAssignment";
 	}
