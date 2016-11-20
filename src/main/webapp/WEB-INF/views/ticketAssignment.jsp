@@ -9,6 +9,8 @@
 
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 
+
+
 <style>
 .error {
 	color: #ff0000;
@@ -24,6 +26,7 @@
 	margin: 16px;
 }
 </style>
+
 <title>Ticket Assignment</title>
 </head>
 <body>
@@ -31,39 +34,15 @@
 		
 	</script>
 
-	<script src="bootstrap/js/bootstrap.js">
-		
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="datepicker/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript">
+		$(".form_datetime").datetimepicker({
+			format : "dd MM yyyy - hh:ii"
+		});
 	</script>
 
-	<div class="navbar navbar-default">
 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-		</div>
-
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search">
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentWithSpring">Home</a></li>
-				<li><a href="signup.html">Signup</a></li>
-				<li class="active"><a href="login.html">Login</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Explore<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Contact us</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Further Actions</a></li>
-					</ul></li>
-			</ul>
-		</div>
-		<!-- /.nav-collapse -->
-	</div>
 
 	<div class="container">
 		<div class="jumbotron">
@@ -78,7 +57,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="inputEmail" class="col-lg-2 control-label">Date</label>
+						<label for="inputDate" class="col-lg-2 control-label">Date</label>
 						<div class="col-lg-10">
 							<div class="input-group date" data-provide="datepicker">
 								<input type="text" class="form-control">
@@ -92,7 +71,7 @@
 						<label for="select" class="col-lg-2 control-label">Priority</label>
 						<div class="col-lg-10">
 							<select class="form-control" id="priorityLst" name="priorityLst">
-								
+
 							</select>
 						</div>
 					</div>
