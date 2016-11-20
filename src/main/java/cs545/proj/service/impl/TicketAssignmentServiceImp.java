@@ -8,16 +8,15 @@ import cs545.proj.domain.TicketAssignment;
 import cs545.proj.repository.TicketAssignmentRepository;
 import cs545.proj.service.TicketAssignmentService;
 
-
-
 public class TicketAssignmentServiceImp implements TicketAssignmentService {
 
 	@Autowired
 	TicketAssignmentRepository assignmentRepo;
+
 	@Override
 	public void AssignTicket(TicketAssignment assignment) {
 		assignmentRepo.save(assignment);
-		
+
 	}
 
 	@Override
@@ -27,11 +26,11 @@ public class TicketAssignmentServiceImp implements TicketAssignmentService {
 
 	@Override
 	public TicketAssignment getAssignedTicket(int id) {
-		
-		return assignmentRepo.getOne((long)id);
+
+		return assignmentRepo.getOne((long) id);
 	}
 
-	// we should have to implement our own query for jpql 
+	// we should have to implement our own query for jpql
 	@Override
 	public TicketAssignment getAssignedTicketByStaff(String name) {
 		return null;
