@@ -92,11 +92,7 @@
 						<label for="select" class="col-lg-2 control-label">Priority</label>
 						<div class="col-lg-10">
 							<select class="form-control" id="priorityLst" name="priorityLst">
-								<option>Low</option>
-								<option>Medium</option>
-								<option>High</option>
-								<option>Urgent</option>
-								<option>Critical</option>
+								
 							</select>
 						</div>
 					</div>
