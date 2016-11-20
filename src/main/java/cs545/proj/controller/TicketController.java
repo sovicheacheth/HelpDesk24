@@ -1,4 +1,7 @@
 package cs545.proj.controller;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
 import javax.validation.Valid;
 
@@ -24,7 +27,7 @@ public class TicketController {
 	private TicketService ticketService;
 	@Autowired
 	private TicketProgressService progessService;
-	
+	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 	@RequestMapping(value="/newTicket", method=RequestMethod.GET)
 	public String createTicket(Model model) {
 		Ticket newticket = new Ticket();
@@ -33,15 +36,21 @@ public class TicketController {
 	}
 	
 	@RequestMapping(value="/newTicket", method=RequestMethod.POST)
-	public String signup(@Valid @ModelAttribute("ticket") Ticket ticket, BindingResult result, Model model) {		
-		if(result.hasErrors()) {
-			return "newTicket";
-		} else {
+	public String createTicket(@Valid @ModelAttribute("ticket") Ticket ticket, BindingResult result, Model model) {		
+		
+		System.out.println(result.getFieldErrors());
+		if(result.hasErrors()){
+		return "newTicket";
+		}else{
+		Date nowTime = new Date();
+		ticket.setDate(nowTime);
+		System.out.println(ticket);
+		
 			ticketService.TicketRegister(ticket);
-			model.addAttribute("message", "Saved ticket details");
-			return "redirect:ticketlist";
+			return "tiketlist";
 		}
 	}
+	
 	
 	@RequestMapping(value="/ticketList", method=RequestMethod.GET)
 	public String getAlltickets(Model model) {		
