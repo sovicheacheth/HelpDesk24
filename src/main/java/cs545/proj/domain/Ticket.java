@@ -1,10 +1,12 @@
 package cs545.proj.domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +17,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Ticket {
@@ -23,32 +26,28 @@ public class Ticket {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
-    @NotBlank
+   
     @NotNull
-	@ManyToOne(cascade=CascadeType.ALL)  
-    private HelpTopic helpTitle;
-    
-    @NotBlank
+    private int topic_id;
+
+    @NotNull
     private String subject;
-    @NotBlank
+    
     private String comment;
     private String file;
     
     @Temporal(TemporalType.DATE)
 	private Date date;
-    @Enumerated
-    private Priority priority;
+   
+    private String priority;
 	public int getId() {
 		return id;
+	
+	
+	
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public HelpTopic getHelpTitle() {
-		return helpTitle;
-	}
-	public void setHelpTitle(HelpTopic helpTitle) {
-		this.helpTitle = helpTitle;
 	}
 	public String getSubject() {
 		return subject;
@@ -71,14 +70,27 @@ public class Ticket {
 	public Date getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate(Date nowTime) {
+		this.date = nowTime;
 	}
-	public Priority getPriority() {
+	
+	 public String getPriority() {
 		return priority;
 	}
-	public void setPriority(Priority priority) {
+	public void setPriority(String priority) {
 		this.priority = priority;
+	}
+	public int getTopic_id() {
+			return topic_id;
+		}
+		public void setTopic_id(int topic_id) {
+			this.topic_id = topic_id;
+		}
+		
+	@Override
+	public String toString() {
+		return "Ticket [id=" + id + ", topic_id=" + topic_id + ", subject=" + subject + ", comment=" + comment
+				+ ", file=" + file + ", date=" + date + ", priority=" + priority + "]";
 	}
     
 }
