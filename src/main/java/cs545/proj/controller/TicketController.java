@@ -3,7 +3,9 @@ package cs545.proj.controller;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -39,7 +41,13 @@ public class TicketController {
 
 	@RequestMapping(value = "/newTicket", method = RequestMethod.GET)
 	public String createTicket(Model model) {
-		Ticket newticket = new Ticket();
+		Ticket ticket = new Ticket();
+		Map<Integer, String> categoryMap = new LinkedHashMap<Integer, String>();
+		for (HelpTopic category : topicService.getTopickList()) {
+			categoryMap.put(category.getId(), category.getTitle());
+		}
+		model.addAttribute("categoryMap", categoryMap);
+		
 		List<HelpTopic> topicList = null;
 		try {
 			topicList = topicService.getTopickList();
@@ -50,11 +58,13 @@ public class TicketController {
 		} catch (Exception e) {
 
 		}
-		model.addAttribute("topics", topicList);
-		model.addAttribute("ticket", newticket);
+		
+		model.addAttribute("ticket", ticket);
 		return "newTicket";
 	}
 
+	
+	
 	@RequestMapping(value = "/newTicket", method = RequestMethod.POST)
 	public String createTicket(@Valid @ModelAttribute("ticket") Ticket ticket, BindingResult result, Model model) {
 
