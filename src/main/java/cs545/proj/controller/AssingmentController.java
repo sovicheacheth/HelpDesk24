@@ -1,6 +1,5 @@
 package cs545.proj.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import cs545.proj.domain.Priority;
 import cs545.proj.domain.Staff;
-import cs545.proj.domain.Ticket;
 import cs545.proj.domain.TicketAssignment;
 import cs545.proj.service.StaffService;
 import cs545.proj.service.TicketService;
@@ -29,7 +27,6 @@ public class AssingmentController {
 	@Autowired
 	StaffService staffService;
 	
-
 	@RequestMapping(value = "/ticketAssignment={id}", method = RequestMethod.GET)
 	public String getTicket(@PathVariable("id") int id, Model model) {
 		model.addAttribute("ticket", ticketService.getTicketById(id));
