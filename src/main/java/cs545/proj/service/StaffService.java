@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import cs545.proj.domain.Staff;
 
 
-@Service
+
 public interface StaffService {
 
 	public void StaffRegister(Staff staff);

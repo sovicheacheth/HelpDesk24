@@ -11,6 +11,6 @@ import cs545.proj.domain.Staff;
 public interface StaffRepository extends JpaRepository<Staff, Integer> {
 
 	
-	Staff findbyFirstName(String FirstName);
+//	Staff findbyFirstName(String FirstName);
 	
 }

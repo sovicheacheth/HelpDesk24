@@ -16,6 +16,7 @@ public class Account {
 	private String username;
 	@NotNull
 	private String password;
+	
 	@Enumerated
 	private Role role;
 	public String getUsername() {

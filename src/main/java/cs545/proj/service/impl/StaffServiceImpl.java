@@ -3,13 +3,14 @@ package cs545.proj.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cs545.proj.domain.Staff;
 import cs545.proj.repository.StaffRepository;
 import cs545.proj.service.StaffService;
 
 
-
+@Service
 public class StaffServiceImpl implements StaffService {
 
 	@Autowired
@@ -34,7 +35,7 @@ public class StaffServiceImpl implements StaffService {
 	
 	
 	public Staff getStaffByFirstName(String name) {
-		return staffRepo.findbyFirstName(name);
+		return null;
 	}
 
 }

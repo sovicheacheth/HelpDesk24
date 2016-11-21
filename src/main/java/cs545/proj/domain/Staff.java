@@ -26,11 +26,24 @@ public class Staff {
 	private String gender;
 	
 	@Valid
-	@OneToOne(cascade=CascadeType.ALL)
-	private Account account;
+	//@OneToOne(cascade=CascadeType.ALL)
+	private String username;
+	private String password;
 	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	@NotNull
-	private String fistname;
+	private String firstname;
 	@NotNull
 	private String lastname;
 	@NotNull
@@ -58,17 +71,13 @@ public class Staff {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public Account getAccount() {
-		return account;
+	
+	
+	public String getFirstname() {
+		return firstname;
 	}
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-	public String getFistname() {
-		return fistname;
-	}
-	public void setFistname(String fistname) {
-		this.fistname = fistname;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 	public String getLastname() {
 		return lastname;
@@ -93,6 +102,12 @@ public class Staff {
 	}
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+	@Override
+	public String toString() {
+		return "Staff [id=" + id + ", address=" + address + ", gender=" + gender + ", username=" + username
+				+ ", password=" + password + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
+				+ ", position=" + position + ", mobile=" + mobile + "]";
 	}
 	
 	

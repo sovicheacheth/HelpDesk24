@@ -1,4 +1,3 @@
-
 <html>
 <head>
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -17,8 +16,19 @@ body {
 
 	<div class="container">
 
-		
-	
+		<!-- 
+		<div class="jumbotron">
+			<div>
+				<h1>Welcome To IT HelpDesk!</h1>
+				<p>Login to Continue, Or Register if you are new.</p>
+			</div>
+
+			<a class="btn btn-primary" href="regiter">Register » </a> <a
+			 class="btn btn-primary" href="login">Login » </a>
+			 
+		</div>
+
+		-->
 
 		<div class="form-group">
 			<label for="inputUserName" class="col-lg-2 control-label">UserName</label>
@@ -51,5 +61,3 @@ body {
 
 </body>
 </html>
-
-
