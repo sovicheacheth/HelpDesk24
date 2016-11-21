@@ -15,6 +15,7 @@
 <link href="datepicker/css/datepicker.css" rel="stylesheet" />
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 
+
 <style>
 .footer {
   position: absolute;
@@ -91,7 +92,7 @@
         <button class="btn btn-default" type="submit">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Welcome, User</a></li>
       </ul>
     </div>
   </div>
