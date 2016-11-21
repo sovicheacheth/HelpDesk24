@@ -114,16 +114,13 @@
 
 
 <div class="form-group">
-      <label class="col-lg-2 control-label" for="topic_id">Select Topic </label>
+      <label class="col-lg-2 control-label" for="topic">Select Topic </label>
       <div class="col-lg-10">
   
-        <form:select path="topic_id" class="form-control" id="topic_id">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </form:select>
+  <form:select path="topic" cssClass="textArea">
+     <option value="Select" label=" - Select - " ></option>
+     <form:options items="${topics}"/>
+</form:select>
       </div>
     </div>
 
