@@ -3,10 +3,12 @@ package cs545.proj.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cs545.proj.domain.TicketAssignment;
 import cs545.proj.repository.TicketAssignmentRepository;
 import cs545.proj.service.TicketAssignmentService;
+
 
 public class TicketAssignmentServiceImp implements TicketAssignmentService {
 

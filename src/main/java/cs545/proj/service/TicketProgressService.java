@@ -9,7 +9,7 @@ import cs545.proj.domain.TicketProgress;
 
 
 
-@Service
+
 public interface TicketProgressService {
 
 	public void saveProgress(TicketProgress progress);

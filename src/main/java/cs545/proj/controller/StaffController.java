@@ -1,5 +1,7 @@
 package cs545.proj.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,11 +65,67 @@ public class StaffController {
 	
 	
 	@RequestMapping(value="/staffList", method=RequestMethod.GET)
-	public String getAllstaffs(Model model) {		
-		model.addAttribute("staffList", staffService.getStaffList());		
+	public String getAllstaffs(Model model) {	
+		
+		
+		String foundMessage = "";
+		String notfoundMessage = "";
+		List<Staff> staffs = null;
+
+		try {
+			staffs = staffService.getStaffList();
+			if (staffs.size() == 0) {
+				notfoundMessage = "no staff found!";
+			}
+
+		} catch (Exception e) {
+			notfoundMessage = "A problem has ocurred!";
+		}
+
+		model.addAttribute("foundMessage", foundMessage);
+		model.addAttribute("notfoundMessage", notfoundMessage);
+		model.addAttribute("staffs", staffs);
 		return "staffList";
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		
+//		model.addAttribute("staffList", staffService.getStaffList());		
+//		return "staffList";
 	}
 	
 	
+/*	String foundMessage = "";
+	String notfoundMessage = "";
+	List<Staff> staffs = null;
+
+	try {
+		staffs = ticketService.getTicketList();
+		if (tickets.size() == 0) {
+			goodMessage = "There is no ticket!";
+		}
+
+	} catch (Exception e) {
+		badMessage = "A problem has ocurred!";
+	}
+
+	model.addAttribute("goodMessage", goodMessage);
+	model.addAttribute("badMessage", badMessage);
+	model.addAttribute("tickets", tickets);
+	return "ticketList";
+	
+	*/
 
 }

@@ -84,29 +84,29 @@
 											id="account.username" placeholder=" User Name " />
 									</div>
 								</div>
-								
-								
+
+
 
 								<div class="form-group">
 									<label for="file" class="col-lg-3 control-label">PassWord
 									</label>
 									<div class="col-lg-9">
-										<form:input type="text" class="form-control" path="password"
-											id="account.password" placeholder=" PassWord" />
+										<form:input type="password" class="form-control"
+											path="password" id="account.password" placeholder=" PassWord" />
 									</div>
 								</div>
-								
 
 
 
 
-								
+
+
 
 
 
 								<div class="form-group">
 									<div class="col-lg-10 col-lg-offset-2">
-										
+
 										<button type="submit" class="btn btn-primary ">Login</button>
 									</div>
 								</div>

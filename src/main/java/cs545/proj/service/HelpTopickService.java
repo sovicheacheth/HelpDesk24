@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import cs545.proj.domain.HelpTopic;
 
 
-@Service
+
 public interface HelpTopickService {
 
 	public void saveTopic(HelpTopic staff);

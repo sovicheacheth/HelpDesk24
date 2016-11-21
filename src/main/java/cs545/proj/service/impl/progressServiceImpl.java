@@ -3,13 +3,14 @@ package cs545.proj.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cs545.proj.domain.Status;
 import cs545.proj.domain.TicketProgress;
 import cs545.proj.repository.TicketProgressRepository;
 import cs545.proj.service.TicketProgressService;
 
-
+@Service
 
 public class progressServiceImpl  implements TicketProgressService{
 

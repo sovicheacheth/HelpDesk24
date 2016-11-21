@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -29,7 +30,7 @@
     </tr>
   </thead>
   
-    <c:if test="${empty staff}">
+    <c:if test="${empty staffs}">
       <tr>
         <td colspan="8">No staff to Display</td>
       </tr>
@@ -57,3 +58,28 @@
         </div>
         
       <%@include file="/WEB-INF/views/Footer.jsp"%>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import cs545.proj.domain.TicketAssignment;
 
 
-@Service
+
 public interface TicketAssignmentService {
 
 	public void AssignTicket(TicketAssignment assignment);
