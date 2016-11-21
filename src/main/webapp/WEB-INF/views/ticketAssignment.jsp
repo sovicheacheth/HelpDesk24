@@ -3,7 +3,6 @@
 <title>Ticket Assignment</title>
 
 
-
 <div class="container">
 	<div class="jumbotron">
 		<form:form id="myform" method="post"
@@ -17,7 +16,7 @@
 					<div class="col-lg-10">
 
 						<input type="text" class="form-control" id="txtTicketTitle"
-							value="${ticket.subject}">
+							value="${ticket.subject}" path="ticket_id">
 					</div>
 				</div>
 
@@ -25,7 +24,7 @@
 					<label for="inputDate" class="col-lg-2 control-label">Date</label>
 					<div class="col-lg-10">
 						<input type="text" class="form-control" id="txtDate"
-							value="${ticket.date}">
+							value="${ticket.date}" path="date">
 					</div>
 				</div>
 
@@ -64,21 +63,22 @@
 					<label for="textArea" class="col-lg-2 control-label">Comment</label>
 					<div class="col-lg-10">
 						<input type="textarea" class="form-control" id="txtDate"
-							value="${ticket.comment}" />
+							value="${ticket.comment}" path="comment"/>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-lg-10 col-lg-offset-2">
 						<button type="reset" class="btn btn-default">Cancel</button>
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary" id="myBtn">Submit</button>
 					</div>
 				</div>
 			</fieldset>
 		</form:form>
 	</div>
+	
 
-	<div></div>
 </div>
+
 
 
