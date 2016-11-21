@@ -28,7 +28,11 @@ public class LoginController {
 	
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String login() {
+	public String login(Model model) {
+		
+		Account account=new Account();
+		model.addAttribute(account);
+		
  		return "login";
 	}
 	
