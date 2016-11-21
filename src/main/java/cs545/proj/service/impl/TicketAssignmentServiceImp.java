@@ -9,6 +9,7 @@ import cs545.proj.domain.TicketAssignment;
 import cs545.proj.repository.TicketAssignmentRepository;
 import cs545.proj.service.TicketAssignmentService;
 
+@Service
 
 public class TicketAssignmentServiceImp implements TicketAssignmentService {
 

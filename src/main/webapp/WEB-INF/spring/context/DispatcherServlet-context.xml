@@ -64,12 +64,7 @@
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="language" />
 		</bean>
-		<mvc:interceptor>
-			<mvc:mapping path="/*/new" />
-			<bean class="cs545.proj.interceptor.MaxUploadSizeInterceptor">
-				<property name="maxSize" value="5120000" />
-			</bean>
-		</mvc:interceptor>
+		
 	</mvc:interceptors>
 
 	<bean id="multipartResolver"

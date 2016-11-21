@@ -111,25 +111,20 @@
 
 
 
-<select name='subject'>
-    <c:forEach items="${subjects}" var="subject" >                  
-        <option value="${subject.key}">
-            ${subject.value.getName()}
-        </option>                    
-    </c:forEach>
-</select>
 
 
 <div class="form-group">
-      <label class="col-lg-2 control-label" for="topic">Select Topic </label>
-      <div class="col-lg-10">  
-        <form:select path="topic" class="form-control" id="topic">   
-     <c:forEach items="${categoryMap}" var="topic" >                  
-        <option value="${topic.key}">
-            ${topic.value}
-        </option>                    
-    </c:forEach>              
-        </form:select>
+      <label class="col-lg-2 control-label" for="topic_id">Select Topic </label>
+      <div class="col-lg-10">
+  
+  <select name="topic"class="form-control">
+          
+          <option value="">1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
       </div>
     </div>
 
@@ -140,8 +135,8 @@
 									<label for="subject" class="col-lg-3 control-label">Topic
 										</label>
 									<div class="col-lg-9">
-										<form:input type="text" class="form-control" path="subject"
-											id="subject" placeholder=" sample topic " />
+										<input type="text" class="form-control" name="subject"
+										value=""	id="subject" placeholder=" sample topic " />
 										<form:errors path="subject" cssClass="error" />
 									</div>
 								</div>
@@ -149,7 +144,8 @@
 								<div class="form-group">
       <label class="col-lg-2 control-label" for="comment">Comment</label>
       <div class="col-lg-10">
-        <form:textarea path="comment" class="form-control" rows="3"/>
+      <form:textarea path="" />
+        <textarea path="comment" class="form-control" rows="3"/>
       </div>
     </div>
 					
