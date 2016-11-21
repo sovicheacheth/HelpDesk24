@@ -28,6 +28,7 @@ public class AssingmentController {
 	TicketService ticketService;
 	@Autowired
 	StaffService staffService;
+	
 
 	@RequestMapping(value = "/ticketAssignment={id}", method = RequestMethod.GET)
 	public String getTicket(@PathVariable("id") int id, Model model) {
@@ -36,6 +37,8 @@ public class AssingmentController {
 		List<Staff> staffList = staffService.getStaffList();
 		model.addAttribute("staffList", staffList);
 		
+		TicketAssignment ta = new TicketAssignment();
+		model.addAttribute("ticketassignment", ta);
 
 		model.addAttribute("enum", Priority.values());
 		return "ticketAssignment";
@@ -43,13 +46,14 @@ public class AssingmentController {
 	}
 
 	@RequestMapping(value = "/ticketAssignment", method = RequestMethod.POST)
-	public String assignTicket(@Valid @ModelAttribute("ticket") Ticket ticket, BindingResult result, Model model) {
+	public String assignTicket(@Valid @ModelAttribute("ticketassignment") TicketAssignment ticketassign, BindingResult result, Model model) {
 		System.out.println(result.getFieldErrors());
 		if(result.hasErrors()){
+			System.out.println("Error insert into Ticket Assignment");
 			return "ticketList";
 		}else{
-			model.addAttribute("ticketassignment", ticket);
-			return "tiketList";
+			model.addAttribute("ticketassignment", ticketassign);
+			return "ticketList";
 		}
 	}
 
