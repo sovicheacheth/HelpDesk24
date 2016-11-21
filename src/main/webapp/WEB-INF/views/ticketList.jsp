@@ -42,8 +42,9 @@
           <td>${ticket.date}</td>
           <td>${ticket.priority}</td>
           <td>
-                         <a class='btn btn-info btn-xs' href="editPage?username=${ticket.id}">
+                         <a class='btn btn-info btn-xs' href="editTicket?id=${ticket.id}">
                          <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                         
                           <a href="deleteUser?username=${ticket.id}" class="btn btn-danger btn-xs">
                           <span class="glyphicon glyphicon-remove"></span> Delete</a>
                         </td>
