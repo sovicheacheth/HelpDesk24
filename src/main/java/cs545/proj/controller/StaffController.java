@@ -43,9 +43,7 @@ public class StaffController {
 			return "register";
 		}
 
-		else {
-
-			
+		else {	
 			
 			Account account=new Account();
 			account.setUsername(staff.getUsername());
@@ -59,5 +57,17 @@ public class StaffController {
 			return "redirect:login";
 		}
 	}
+	
+
+	//get staff list
+	
+	
+	@RequestMapping(value="/staffList", method=RequestMethod.GET)
+	public String getAllstaffs(Model model) {		
+		model.addAttribute("staffList", staffService.getStaffList());		
+		return "staffList";
+	}
+	
+	
 
 }

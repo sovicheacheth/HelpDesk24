@@ -1,6 +1,6 @@
 package cs545.proj.controller;
 
-import java.util.Date;
+
 
 import javax.validation.Valid;
 
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import cs545.proj.domain.Account;
+import cs545.proj.domain.Role;
 import cs545.proj.domain.Ticket;
 import cs545.proj.service.AccountService;
 
@@ -42,13 +43,15 @@ public class LoginController {
 		
 		System.out.println(result.getFieldErrors());
 		if(result.hasErrors()){
-		return "login";
+		
+			return "login";
 		}
+		
 		else
 		{
 		
 		
-		System.out.println(account);
+	//	System.out.println(account);
 		
 		Account acc= accountService.getAccount(account.getUsername());
 		
@@ -56,17 +59,28 @@ public class LoginController {
 			return "login";
 		
 		if(acc.getPassword().equals(account.getPassword()))
+
+//			{
+//			
+//			if(account.getRole().equals(Role.ADMIN))
+//				return "staffList";
+//			
+//		
+//			if(account.getRole().equals(Role.TECHNICIAN))
+//				return "staffList";
+//		
+//			if(account.getRole().equals(Role.STAFF))
+//				return "staffList";
+//			
+//		}
 		
-			return "index";
-		
-		else
-			return "login";
+		return "staffList";
+			
 		}
+		return "login";
 	}
 	
 
-	
-	
 	
 	
 	@RequestMapping(value="/logoutSuccess", method = RequestMethod.GET)
