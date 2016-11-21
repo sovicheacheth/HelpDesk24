@@ -28,7 +28,7 @@ public class Ticket {
 
    
     @NotNull
-    private int topic_id;
+    private int topic;
 
     @NotNull
     private String subject;
@@ -80,16 +80,17 @@ public class Ticket {
 	public void setPriority(String priority) {
 		this.priority = priority;
 	}
-	public int getTopic_id() {
-			return topic_id;
-		}
-		public void setTopic_id(int topic_id) {
-			this.topic_id = topic_id;
-		}
+	
 		
+	public int getTopic() {
+		return topic;
+	}
+	public void setTopic(int topic) {
+		this.topic = topic;
+	}
 	@Override
 	public String toString() {
-		return "Ticket [id=" + id + ", topic_id=" + topic_id + ", subject=" + subject + ", comment=" + comment
+		return "Ticket [id=" + id + ", topic_id=" + topic + ", subject=" + subject + ", comment=" + comment
 				+ ", file=" + file + ", date=" + date + ", priority=" + priority + "]";
 	}
     
