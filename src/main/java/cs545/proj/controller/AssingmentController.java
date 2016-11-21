@@ -32,14 +32,24 @@ public class AssingmentController {
 	public String getTicket(@PathVariable("id") int id, Model model) {
 		model.addAttribute("ticket", ticketService.getTicketById(id));
 
+//		List<Staff> staffList = staffService.getStaffList();
+//		for (Staff staffModel : staffList) {
+//			model.addAttribute("staffs", staffModel.getFirstname() + " " + staffModel.getLastname());
+//		}
+		
 		List<Staff> staffList = staffService.getStaffList();
-		for (Staff staffModel : staffList) {
-			System.out.println(staffModel.getFirstname() + " " + staffModel.getLastname());
-		}
-		model.addAttribute("staffs", staffService.getStaffList());
+		model.addAttribute("staffList", staffList);
 
 		model.addAttribute("enum", Priority.values());
 		return "ticketAssignment";
+		
+//		if (result.hasErrors()) {
+//			return "topic";
+//		} else {
+//			topicService.saveTopic(topic);
+//			// model.addAttribute("message", "Saved topic");
+//			return "redirect:topiclist";
+//		}
 	}
 
 	@RequestMapping(value = "/ticketAssignment={id}", method = RequestMethod.POST)
