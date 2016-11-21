@@ -73,7 +73,7 @@
         <li class="active"><a href="/newTicket">New Ticket</a></li>
         <li><a href="/ticketlist">Ticket List</a></li>
         <li class="dropdown">
-          <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">More <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -89,7 +89,7 @@
         <div class="form-group">
           <input class="form-control" type="text" placeholder="Search">
         </div>
-        <button class="btn btn-default" type="submit">Submit</button>
+        <button class="btn btn-default" type="submit">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Welcome, User</a></li>
