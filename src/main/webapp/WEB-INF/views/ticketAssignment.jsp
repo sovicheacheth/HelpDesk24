@@ -2,7 +2,6 @@
 
 <title>Ticket Assignment</title>
 
-
 <div class="container">
 	<div class="jumbotron">
 		<form:form id="myform" method="post"
