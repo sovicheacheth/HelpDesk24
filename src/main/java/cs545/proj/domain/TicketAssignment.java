@@ -37,5 +37,11 @@ public class TicketAssignment {
     
     @Temporal(TemporalType.DATE)
 	private Date date;
+    
+	@Override
+	public String toString() {
+		return "Assign Ticket [id=" + id + ", staff_id =" + staff_id + ", ticket_id=" + ticket_id + ", priority=" + priority
+				+ ", date=" + date + "]";
+	}
 
 }
