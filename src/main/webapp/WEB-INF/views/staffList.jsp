@@ -23,10 +23,11 @@
   <thead>
     <tr>
       <th>No</th>
-      <th>first name</th>
-      <th> last name</th>
-      <th>position</th>
-       <th>email</th>
+      <th>First name</th>
+      <th> Last name</th>
+      <th>Position</th>
+      <th>Email</th>
+       
     </tr>
   </thead>
   
@@ -43,11 +44,12 @@
           <td>${staff.firstname}</td>
           <td>${staff.lastname}</td>
           <td>${staff.position}</td>
-           <td>${staff.email}</td>
+          <td>${staff.email}</td>
+          
           <td>
-                         <a class='btn btn-info btn-xs' href="editPage?username=${staff.id}">
+                         <a class='btn btn-info btn-xs' href="editStaff?id=${staff.id}">
                          <span class="glyphicon glyphicon-edit"></span> Edit</a>
-                          <a href="deleteUser?username=${staff.id}" class="btn btn-danger btn-xs">
+                          <a href="deleteStaff?id=${staff.id}" class="btn btn-danger btn-xs">
                           <span class="glyphicon glyphicon-remove"></span> Delete</a>
                         </td>
 

@@ -11,10 +11,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import cs545.proj.domain.Account;
 import cs545.proj.domain.Role;
 import cs545.proj.domain.Staff;
+import cs545.proj.domain.Ticket;
 import cs545.proj.service.AccountService;
 import cs545.proj.service.StaffService;
 
@@ -27,6 +30,9 @@ public class StaffController {
 	@Autowired
 	AccountService accountService;
 
+	
+	//Registration
+	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register(Model model) {
 
@@ -68,64 +74,104 @@ public class StaffController {
 	public String getAllstaffs(Model model) {	
 		
 		
-		String foundMessage = "";
-		String notfoundMessage = "";
-		List<Staff> staffs = null;
+	
+	    List<Staff> staffs = null;
 
-		try {
-			staffs = staffService.getStaffList();
-			if (staffs.size() == 0) {
-				notfoundMessage = "no staff found!";
-			}
-
-		} catch (Exception e) {
-			notfoundMessage = "A problem has ocurred!";
-		}
-
-		model.addAttribute("foundMessage", foundMessage);
-		model.addAttribute("notfoundMessage", notfoundMessage);
+		staffs = staffService.getStaffList();
 		model.addAttribute("staffs", staffs);
-		return "staffList";
 		
+		System.out.println(staffs);
+		return "staffList";	
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		
-//		model.addAttribute("staffList", staffService.getStaffList());		
-//		return "staffList";
 	}
 	
 	
-/*	String foundMessage = "";
-	String notfoundMessage = "";
-	List<Staff> staffs = null;
+	//Edit staff
+	
 
-	try {
-		staffs = ticketService.getTicketList();
-		if (tickets.size() == 0) {
-			goodMessage = "There is no ticket!";
+	@RequestMapping(value = "/editStaff", method = RequestMethod.GET)
+	public String editTicket(@RequestParam(value = "id") int id, Model model) {
+		Staff staff = new Staff();
+		staff = (Staff) staffService.getStaffById(id);
+		if (staff != null) {
+		
+			
+			model.addAttribute("staff", staff);
+			return "editStaff";
+
+		} else {
+			model.addAttribute("message", "no such staff");
+			return "staffList";
+		}
+	}
+
+	@RequestMapping(value = "/editStaff", method = RequestMethod.POST)
+	public String editTicket(@RequestParam(value = "id") int id, @ModelAttribute("staff") Staff staff,
+			BindingResult result, Model model) {
+
+		if (result.hasErrors()) {
+			return "editStaff";
+		} else {
+
+			Staff stafffromdb = new Staff();
+			stafffromdb = (Staff) staffService.getStaffById(id);
+		
+			stafffromdb.setFirstname(staff.getFirstname());
+			stafffromdb.setLastname(staff.getLastname());
+			stafffromdb.setEmail(staff.getEmail());
+			stafffromdb.setMobile(staff.getMobile());
+			//stafffromdb.getAddress().setBuildingNo(staff.getAddress().getBuildingNo());
+			//stafffromdb.getAddress().setOfficeNo(staff.getAddress().getOfficeNo());
+			stafffromdb.setUsername(staff.getUsername());
+			
+			
+			System.out.println(staff.toString());
+			staffService.StaffRegister(stafffromdb);
+			
+		
+			return "redirect:/staffList";
 		}
 
-	} catch (Exception e) {
-		badMessage = "A problem has ocurred!";
 	}
-
-	model.addAttribute("goodMessage", goodMessage);
-	model.addAttribute("badMessage", badMessage);
-	model.addAttribute("tickets", tickets);
-	return "ticketList";
 	
-	*/
+	
+	//Delete
+	
+	
+	@RequestMapping(value = "/deleteStaff", method = RequestMethod.GET)
+	public String deleteTicket(@RequestParam(value = "id") int id, Model model) {
+		Staff staff = new Staff();
+		staff = (Staff) staffService.getStaffById(id);
+		if (staff != null) {
+			//System.out.println("staff Found , to be edited  " + staff);
+			model.addAttribute("staff", staff);
+			return "deleteStaff";
+
+		} else {
+			model.addAttribute("message", "staff ");
+			return "staffList";
+		}
+	}
+	
+	
+	@RequestMapping(value = "/deleteStaff", method = RequestMethod.POST)
+	public String deleteTicket(@RequestParam(value = "id") int id, @ModelAttribute("staff") Staff staff,
+			BindingResult result, Model model) {
+
+		if (result.hasErrors()) {
+			return "deleteStaff";
+		} else {
+
+			staffService.deleteStaff(staffService.getStaffById(id));
+			return "redirect:/staffList";
+		}
+
+	}
+	
 
 }
+
+	
+	
+	
+

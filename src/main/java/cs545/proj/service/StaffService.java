@@ -14,4 +14,5 @@ public interface StaffService {
 	public List<Staff> getStaffList();
 	public Staff getStaffById(int id);
 	public Staff getStaffByFirstName(String name);
+	public void deleteStaff(Staff staff);
 }

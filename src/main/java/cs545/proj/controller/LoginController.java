@@ -74,7 +74,7 @@ public class LoginController {
 //			
 //		}
 		
-		return "staffList";
+		return "redirect:staffList";
 			
 		}
 		return "login";

@@ -38,4 +38,12 @@ public class StaffServiceImpl implements StaffService {
 		return null;
 	}
 
+	@Override
+	public void deleteStaff(Staff staff) {
+		staffRepo.delete(staff);
+		
+	}
+
+	
+
 }
