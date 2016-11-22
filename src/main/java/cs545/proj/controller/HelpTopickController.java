@@ -72,12 +72,12 @@ public class HelpTopickController {
 		topic = (HelpTopic) topicService.getTopic(id);
 		if (topic != null) {
 			System.out.println("Ticket Found , to be edited  " + topic);
-			model.addAttribute("ticket", topic);
-			return "editTicket";
+			model.addAttribute("topic", topic);
+			return "editTopic";
 
 		} else {
 			model.addAttribute("message", "the catagory not yet ready  ");
-			return "topicList";
+			return "topiclist";
 		}
 	}
 
@@ -86,7 +86,7 @@ public class HelpTopickController {
 			BindingResult result, Model model) {
 
 		if (result.hasErrors()) {
-			return "editTicket";
+			return "editTopic";
 		} else {
 
 			HelpTopic ticketfromdb = new HelpTopic();
@@ -94,7 +94,7 @@ public class HelpTopickController {
 
 			ticketfromdb.setTitle(topic.getTitle());		
 			topicService.saveTopic(topic);
-			return "redirect:/topicList";
+			return "redirect:/topiclist";
 		}
 
 	}
@@ -105,12 +105,12 @@ public class HelpTopickController {
 		topic = (HelpTopic) topicService.getTopic(id);
 		if (topic != null) {
 			System.out.println("Ticket Found , to be edited  " + topic);
-			model.addAttribute("ticket", topic);
-			return "deleteTicket";
+			model.addAttribute("topic", topic);
+			return "deleteTopic";
 
 		} else {
 			model.addAttribute("message", "the ticket is not yet Completed ");
-			return "topicList";
+			return "topiclist";
 		}
 	}
 
@@ -119,11 +119,11 @@ public class HelpTopickController {
 			BindingResult result, Model model) {
 
 		if (result.hasErrors()) {
-			return "deleteTicket";
+			return "deleteTopic";
 		} else {
 
 			topicService.deleteTopic(topicService.getTopic(id));
-			return "redirect:/topicList";
+			return "redirect:/topiclist";
 		}
 	}
 	
