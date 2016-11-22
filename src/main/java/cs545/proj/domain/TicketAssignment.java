@@ -39,9 +39,50 @@ public class TicketAssignment {
 	private Date date;
     
 	@Override
+	
 	public String toString() {
 		return "Assign Ticket [id=" + id + ", staff_id =" + staff_id + ", ticket_id=" + ticket_id + ", priority=" + priority
 				+ ", date=" + date + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Staff getStaff_id() {
+		return staff_id;
+	}
+
+	public void setStaff_id(Staff staff_id) {
+		this.staff_id = staff_id;
+	}
+
+	public Ticket getTicket_id() {
+		return ticket_id;
+	}
+
+	public void setTicket_id(Ticket ticket_id) {
+		this.ticket_id = ticket_id;
+	}
+
+	public Priority getPriority() {
+		return priority;
+	}
+
+	public void setPriority(Priority priority) {
+		this.priority = priority;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }
