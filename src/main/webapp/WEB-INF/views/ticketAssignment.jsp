@@ -76,33 +76,30 @@
 				<div class="form-group">
 					<label for="select" class="col-lg-2 control-label">Priority</label>
 					<div class="col-lg-10">
-
-						<select value="${ticket.priority}" class="form-control"
+              
+						<select name ="priority" class="form-control"
 							id="priority">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
+							<option>Low</option>
+							<option>Medium</option>
+							<option>High</option>
+							<option>Urgent</option>
+							<option>Critical</option>
 						</select>
 					</div>
 				</div>
 
 				<!-- Assign to staff -->
 				<div class="form-group">
-					<label for="select" class="col-lg-2 control-label">Staff</label>
-					<div class="col-lg-10">
-
-						<select name="staff_id" class="form-control" id="staff_id">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-
-					</div>
-				</div>
+									<label class="col-lg-3 control-label" for="topic">Select
+										Topic </label>
+									<div class="col-lg-9">
+										<form:select path="staff_id" class="form-control" id="staff_id">
+											<c:forEach items="${staffMap}" var="staff">
+												<option value="${staff.key}">${staff.value}</option>
+											</c:forEach>
+										</form:select>
+									</div>
+								</div>
 
 				<div class="form-group">
 					<label for="textArea" class="col-lg-2 control-label">Comment</label>

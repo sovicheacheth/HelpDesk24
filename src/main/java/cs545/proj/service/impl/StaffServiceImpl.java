@@ -44,6 +44,12 @@ public class StaffServiceImpl implements StaffService {
 		
 	}
 
+	@Override
+	public List<Staff> getAllByposition(String position) {
+		
+		return staffRepo.findAllByposition(position);
+	}
+
 	
 
 }

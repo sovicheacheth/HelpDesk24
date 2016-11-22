@@ -15,4 +15,5 @@ public interface StaffService {
 	public Staff getStaffById(int id);
 	public Staff getStaffByFirstName(String name);
 	public void deleteStaff(Staff staff);
+	public List<Staff> getAllByposition(String position);
 }

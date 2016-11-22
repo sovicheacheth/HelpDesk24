@@ -1,13 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-<link href="datepicker/css/datepicker.css" rel="stylesheet" />
-<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>List of Tickets</title>
 </head>
 <body>
@@ -47,17 +38,10 @@
 						</a> <a class='btn btn-success btn-xs'
 							href="ticketAssignment=${ticket.id}"> <span
 								class="glyphicon glyphicon-edit"></span> Assign Ticket
-						</a> 
-						
-						<a class='btn btn-success btn-xs'
+						</a> <a class='btn btn-success btn-xs'
 							href="ticketProgress=${ticket.id}"> <span
 								class="glyphicon glyphicon-edit"></span> Update Progress
-						</a> 
-						
-						
-
-						
-						<a href="deleteTicket?id=${ticket.id}"
+						</a> <a href="deleteTicket?id=${ticket.id}"
 							class="btn btn-danger btn-xs"> <span
 								class="glyphicon glyphicon-remove"></span> Delete
 						</a></td>
