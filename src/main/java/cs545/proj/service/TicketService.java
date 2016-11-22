@@ -18,5 +18,5 @@ public interface TicketService {
 	public List<Ticket> getTicketBytopic_id(int topic);
 	public List<Ticket> getTicketBydate(Date date);
 	public List<Ticket> getTicketBypriority(String status);
-	
+	public void deleteTicket(Ticket ticket);
 }
