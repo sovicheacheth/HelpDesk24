@@ -31,5 +31,11 @@ public class HelptopicServiceImpl  implements HelpTopickService{
 		return topicRepo.findOne((long)id);
 	}
 
+	@Override
+	public void deleteTopic(HelpTopic topic) {
+		topicRepo.delete(topic);
+		
+	}
+
 
 }
