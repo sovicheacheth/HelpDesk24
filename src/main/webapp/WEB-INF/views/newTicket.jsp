@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student Enrollment Signup</title>
+<title>Create new ticket</title>
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="datepicker/css/datepicker.css" rel="stylesheet" />
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -81,7 +81,7 @@
 							class="bs-example form-horizontal" modelAttribute="ticket"
 							action="newTicket" enctype="multipart/form-data">
 							<fieldset>
-								<legend>Create A Ticket </legend>
+								<legend>Create New Ticket </legend>
 
 								<div class="form-group">
 									<label class="col-lg-3 control-label" for="topic">Select
