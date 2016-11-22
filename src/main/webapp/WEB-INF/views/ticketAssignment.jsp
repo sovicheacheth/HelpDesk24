@@ -5,14 +5,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>delete</title>
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-<link href="datepicker/css/datepicker.css" rel="stylesheet" />
-<link href="assets/css/bootstrap-united.css" rel="stylesheet" />
 
 <%@ include file="Header.jsp"%>
 
@@ -45,40 +37,33 @@
 
 <div class="container">
 	<div class="jumbotron">
-		<form:form id="myform" method="post"
+		<form:form id="myform" method="POST"
 			class="bs-example form-horizontal" modelAttribute="ticketAssignment"
 			action="ticketAssignment">
 			<fieldset>
 
 				<legend>Ticket Assignment</legend>
-
+				
 				<input type="hidden" name="id" value="${ticket.id}">
 
 
 				<div class="form-group">
-					<label for="inputEmail" class="col-lg-2 control-label">Title</label>
-					<div class="col-lg-10">
+					<label for="inputEmail" class="col-lg-3 control-label">Title</label>
+					<div class="col-lg-9">
 
-						<input type="text" class="form-control" id="txtTicketTitle"
-							value="${ticket.subject}">
+						<input type="text" class="form-control" name="ticket_id" id="ticket_id"
+							value="${ticket.id}">
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label for="inputDate" class="col-lg-2 control-label">Date</label>
-					<div class="col-lg-10">
-						<input type="text" class="form-control" id="txtDate"
-							value="${ticket.date}">
-					</div>
-				</div>
+
 
 				<!-- Select Priority -->
 				<div class="form-group">
-					<label for="select" class="col-lg-2 control-label">Priority</label>
-					<div class="col-lg-10">
-              
-						<select name ="priority" class="form-control"
-							id="priority">
+					<label for="select" class="col-lg-3 control-label">Priority</label>
+					<div class="col-lg-9">
+
+						<select name="priority" class="form-control" id="priority">
 							<option>Low</option>
 							<option>Medium</option>
 							<option>High</option>
@@ -90,27 +75,27 @@
 
 				<!-- Assign to staff -->
 				<div class="form-group">
-									<label class="col-lg-3 control-label" for="topic">Select
-										Topic </label>
-									<div class="col-lg-9">
-										<form:select path="staff_id" class="form-control" id="staff_id">
-											<c:forEach items="${staffMap}" var="staff">
-												<option value="${staff.key}">${staff.value}</option>
-											</c:forEach>
-										</form:select>
-									</div>
-								</div>
+					<label class="col-lg-3 control-label" for="topic">Select
+						Staff</label>
+					<div class="col-lg-9">
+						<form:select path="staff_id" class="form-control" id="staff_id">
+							<c:forEach items="${staffMap}" var="staff">
+								<option value="${staff.key}">${staff.value}</option>
+							</c:forEach>
+						</form:select>
+					</div>
+				</div>
 
 				<div class="form-group">
-					<label for="textArea" class="col-lg-2 control-label">Comment</label>
-					<div class="col-lg-10">
+					<label for="textArea" class="col-lg-3 control-label">Comment</label>
+					<div class="col-lg-9">
 						<input type="textarea" class="form-control" id="txtDate"
 							value="${ticket.comment}" path="comment" />
 					</div>
 				</div>
 
 				<div class="form-group">
-					<div class="col-lg-10 col-lg-offset-2">
+					<div class="col-lg-9 col-lg-offset-2">
 						<button type="reset" class="btn btn-default">Cancel</button>
 						<button type="submit" class="btn btn-primary" id="myBtn">Submit</button>
 					</div>
