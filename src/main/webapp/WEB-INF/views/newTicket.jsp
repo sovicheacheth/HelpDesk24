@@ -135,9 +135,9 @@
 
 
 								<div class="col-lg-9 col-lg-offset-3">
-									<button class="btn btn-default">View Ticket List</button>
+									
 
-									<button class="btn btn-primary">Save</button>
+									<button class="btn btn-primary">Submit</button>
 								</div>
 							</fieldset>
 						</form:form>

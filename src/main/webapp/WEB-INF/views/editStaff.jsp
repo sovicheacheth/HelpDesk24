@@ -61,8 +61,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<h3 align="center">Editing Staff Member with ID Number:
-							${staff.id}</h3>
+						<h3 align="center">Update Staff Information (ID : ${staff.id})</h3>
 
 
 						<form action="editStaff" method="post"
@@ -162,10 +161,14 @@
 							</div>
 
 
-
-							<input type="hidden" name="id" value="${staff.id}">
-							<button class="btn btn-warning">update Staff</button>
-							<a href="staffList" class="btn btn-default">Cancel</a>
+							<div class="form-group">
+								<div class="col-lg-3"></div>
+								<div class="col-lg-9">
+									<input type="hidden" name="id" value="${staff.id}">
+									<button class="btn btn-info">Update Staff</button>
+									<a href="staffList" class="btn btn-default">Cancel</a>
+								</div>
+							</div>
 
 
 						</form>
