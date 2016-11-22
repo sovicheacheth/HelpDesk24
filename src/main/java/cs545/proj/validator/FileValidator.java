@@ -1,11 +1,12 @@
 package cs545.proj.validator;
 
+import org.springframework.stereotype.Service;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import cs545.proj.domain.UploadedFile;
 
-
+@Service
 public class FileValidator implements Validator {
 
 	@Override

@@ -204,7 +204,7 @@ public class TicketController {
 		if (ticket != null) {
 			System.out.println("Ticket Found , to be edited  " + ticket);
 			model.addAttribute("ticket", ticket);
-			return "editTicket";
+			return "deleteTicket";
 
 		} else {
 			model.addAttribute("message", "the ticket is not yet Completed ");
@@ -217,7 +217,7 @@ public class TicketController {
 			BindingResult result, Model model) {
 
 		if (result.hasErrors()) {
-			return "editTicket";
+			return "deleteTicket";
 		} else {
 
 			ticketService.deleteTicket(ticketService.getTicketById(id));
