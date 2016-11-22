@@ -105,7 +105,7 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<form:form id="myform" method="post"
-							class="bs-example form-horizontal" modelAttribute="ticket" action="newTicket">
+							class="bs-example form-horizontal" modelAttribute="ticket" action="newTicket" enctype="multipart/form-data">
 							<fieldset>
 								<legend>Create A Ticket </legend>
 
@@ -153,14 +153,14 @@
       </div>
     </div>
 					
-					<div class="form-group">
-									<label for="file" class="col-lg-3 control-label">Topic
-										</label>
-									<div class="col-lg-9">
-										<form:input type="text" class="form-control" path="file"
-											id="file" placeholder=" sample topic " />								
-									</div>
-								</div>				
+					
+								
+					Upload File:&nbsp;
+				<input type="file" name="attachement" />
+			
+			
+			
+											
 								
 								<div class="form-group">
       <label class="col-lg-2 control-label" for="priority">Selects</label>
