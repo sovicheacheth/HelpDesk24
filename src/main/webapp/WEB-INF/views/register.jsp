@@ -228,7 +228,7 @@
 									<label for="file" class="col-lg-3 control-label">PassWord
 									</label>
 									<div class="col-lg-9">
-										<form:input type="text" class="form-control" path="password"
+										<form:input type="password" class="form-control" path="password"
 											id="account.password" placeholder=" PassWord" />
 									</div>
 								</div>
