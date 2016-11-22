@@ -18,17 +18,14 @@
 
 <style>
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  
-  /* additional style for effect only */
-   text-align: center;
-    background-color: #333;
-    color: #fff;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* additional style for effect only */
+	text-align: center;
+	background-color: #333;
+	color: #fff;
 }
-
-
 
 .green {
 	font-weight: bold;
@@ -57,23 +54,25 @@
 <body>
 
 	<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">IT-HelpDesk24</a>
-    </div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button class="navbar-toggle collapsed" type="button"
+				data-target="#bs-example-navbar-collapse-1" data-toggle="collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">IT-HelpDesk24</a>
+		</div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/HelpDesk24/newTicket">New Ticket</a></li>
-        <li><a href="/HelpDesk24/ticketList">Ticket List</a></li>
-        <li><a href="/HelpDesk24/staffList">Staff List</a></li>
-        <!-- <li class="dropdown">
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/HelpDesk24/newTicket">New
+						Ticket</a></li>
+				<li><a href="/HelpDesk24/ticketList">Ticket List</a></li>
+				<li><a href="/HelpDesk24/staffList">Staff List</a></li>
+				<!-- <li class="dropdown">
           <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">More <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
@@ -85,20 +84,19 @@
             <li><a href="#">One more separated link</a></li>
           </ul>
         </li>-->
-      </ul>
-      <!--<form class="navbar-form navbar-left" role="search">
+			</ul>
+			<!--<form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input class="form-control" type="text" placeholder="Search">
         </div>
         <button class="btn btn-default" type="submit">Search</button>
       </form>-->
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Welcome, User</a></li>
-        <li><a href="/HelpDesk24/">Log out</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-		
-		<!-- /.nav-collapse -->
-	
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Welcome, User</a></li>
+				<li><a href="/HelpDesk24/">Log out</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<!-- /.nav-collapse -->
