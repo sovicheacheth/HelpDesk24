@@ -103,8 +103,8 @@
 
 
 								<div class="form-group">
-									<label class="col-lg-2 control-label" for="priority">Gender</label>
-									<div class="col-lg-10">
+									<label class="col-lg-3 control-label" for="priority">Gender</label>
+									<div class="col-lg-9">
 										<form:select path="gender" class="form-control">
 
 											<option>female</option>
@@ -131,8 +131,8 @@
 
 
 								<div class="form-group">
-									<label class="col-lg-2 control-label" for="priority">Position</label>
-									<div class="col-lg-10">
+									<label class="col-lg-3 control-label" for="priority">Position</label>
+									<div class="col-lg-9">
 										<form:select path="position" class="form-control">
 
 											<option>Accountant</option>
