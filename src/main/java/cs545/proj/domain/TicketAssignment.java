@@ -14,6 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class TicketAssignment {
@@ -30,12 +31,11 @@ public class TicketAssignment {
     @OneToOne(cascade=CascadeType.ALL)
     private Ticket ticket_id;
     
-    @NotBlank
-    @Enumerated
-    private Priority priority;
+    private String priority;
   
     
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date date;
     
 	@Override
@@ -69,11 +69,19 @@ public class TicketAssignment {
 		this.ticket_id = ticket_id;
 	}
 
-	public Priority getPriority() {
+//	public Priority getPriority() {
+//		return priority;
+//	}
+//
+//	public void setPriority(Priority priority) {
+//		this.priority = priority;
+//	}
+
+	public String getPriority() {
 		return priority;
 	}
 
-	public void setPriority(Priority priority) {
+	public void setPriority(String priority) {
 		this.priority = priority;
 	}
 

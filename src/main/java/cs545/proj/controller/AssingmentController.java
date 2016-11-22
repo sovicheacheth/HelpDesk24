@@ -1,6 +1,7 @@
 package cs545.proj.controller;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -16,10 +17,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import cs545.proj.domain.HelpTopic;
 import cs545.proj.domain.Priority;
 import cs545.proj.domain.Staff;
+import cs545.proj.domain.Ticket;
 import cs545.proj.domain.TicketAssignment;
 import cs545.proj.service.StaffService;
 import cs545.proj.service.TicketAssignmentService;
@@ -50,24 +53,43 @@ public class AssingmentController {
 		TicketAssignment ta = new TicketAssignment();
 		model.addAttribute("ticketAssignment", ta);
 		System.out.println(staffmap);
-		model.addAttribute("enum", Priority.values());
+		System.out.println(staffmap.keySet());
+		//model.addAttribute("enum", Priority.values());
 		return "ticketAssignment";
 
 	}
 
 	@RequestMapping(value = "/ticketAssignment", method = RequestMethod.POST)
-	public String assignTicket(@Valid @ModelAttribute("ticketassignment") TicketAssignment ticketassign, BindingResult result, Model model) {
-		System.out.println(result.getFieldErrors());
-		if(result.hasErrors()){
-			System.out.println("Error insert into Ticket Assignment");
-			return "ticketAssignment";
-		}else{
-			
-			assignmentService.AssignTicket(ticketassign);
-			
-			//model.addAttribute("ticketassignment", ticketassign);
+	public String assignTicket(@RequestParam(value = "id") int id, @Valid @ModelAttribute("ticketAssignment") TicketAssignment ticketassign, BindingResult result, Model model) {
+		
+		System.out.println(result.getFieldError());
+		
+		if (result.hasErrors()) {
+			System.out.println("Error ticket assignment");
 			return "ticketList";
+		} else {
 			
+			TicketAssignment ta = new TicketAssignment();
+			
+			//Set Date
+			Date nowTime = new Date();
+			ta.setDate(nowTime);	
+			
+			ta.setId(ticketassign.getId());
+			ta.setPriority(ticketassign.getPriority());
+			ta.setTicket_id(ticketassign.getTicket_id());
+			ta.setStaff_id(ticketassign.getStaff_id());
+			
+			assignmentService.AssignTicket(ta);
+			
+			model.addAttribute("id", id);
+			
+			System.out.println(nowTime);
+			System.out.println(ticketassign.getPriority());
+			System.out.println(ticketassign.getTicket_id());
+			System.out.println(ticketassign.getStaff_id());
+
+			return "redirect:/ticketList";
 		}
 	}
 
