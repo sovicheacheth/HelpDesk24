@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>delete</title>
+<title>Delete Staff</title>
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="datepicker/css/datepicker.css" rel="stylesheet" />
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -62,7 +62,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<h4 align="center">Delete Staff : ${staff.id} ?</h4>
+						<h4 align="center">Delete Staff (ID : ${staff.id}) ?</h4>
 
 
 						<form action="deleteStaff" method="post"
@@ -125,10 +125,14 @@
 
 
 
-
-							<input type="hidden" name="id" value="${staff.id}">
-							<button class="btn btn-danger">Delete Staff</button>
-							<a href="staffList" class="btn btn-default">Cancel</a>
+							<div class="form-group">
+								<div class="col-lg-3"></div>
+								<div class="col-lg-9">
+									<input type="hidden" name="id" value="${staff.id}">
+									<button class="btn btn-danger">Delete</button>
+									<a href="staffList" class="btn btn-default">Cancel</a>
+								</div>
+							</div>
 
 
 						</form>

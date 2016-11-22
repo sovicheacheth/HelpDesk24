@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student Enrollment Signup</title>
+<title>Delete Topic</title>
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="datepicker/css/datepicker.css" rel="stylesheet" />
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -41,35 +41,7 @@
 </head>
 <body>
 
-	<div class="navbar navbar-default">
-
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-		</div>
-
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search">
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentWithSpring">Home</a></li>
-				<li class="active"><a href="signup.html">Signup</a></li>
-				<li><a href="login.html">Login</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Explore<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Contact us</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Further Actions</a></li>
-					</ul></li>
-			</ul>
-		</div>
-		<!-- /.nav-collapse -->
-	</div>
+	<%@include file="/WEB-INF/views/Header.jsp"%>
 
 	<script src="jquery-1.8.3.js">
 		
@@ -87,37 +59,44 @@
 		<div class="well">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6">								
-<h4 align="center">Delete Topic : ${topic.id} ? </h4>
-       
-                   
-                <form action="deleteTopic" method="post" class="bs-example form-horizontal">                  
-           
-     
-           <div class="form-group">
-									<label for="subject" class="col-lg-3 control-label">Title
-										</label>
-									<div class="col-lg-9">
-										<input type="text" value="${topic.title}" class="form-control" name="title" 
-											id="subject" placeholder=" sample topic " />
-										<form:errors path="subject" cssClass="error" />
-									</div>
+					<div class="col-lg-6">
+						<h4 align="center">Delete Topic (ID : ${topic.id}) ?</h4>
+
+
+						<form action="deleteTopic" method="post"
+							class="bs-example form-horizontal">
+
+
+							<div class="form-group">
+								<label for="subject" class="col-lg-3 control-label">Title
+								</label>
+								<div class="col-lg-9">
+									<input type="text" value="${topic.title}" class="form-control"
+										name="title" id="subject" placeholder=" sample topic " />
+									<form:errors path="subject" cssClass="error" />
 								</div>
-								
-								
-    					
-	  
-    <input type="hidden" name ="id" value="${topic.id}">     
-          <button  class="btn btn-danger">Delete topic</button>   
-          <a href="topicList" class="btn btn-default">Cancel</a>
-                     
-                                                   
-       </form>   
-                
-  </div>
-</div>
-</div>
-</div>
-</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<div class="col-lg-3"></div>
+								<div class="col-lg-9">
+									<input type="hidden" name="id" value="${topic.id}">
+									<button class="btn btn-danger">Delete</button>
+									<a href="topicList" class="btn btn-default">Cancel</a>
+								</div>
+							</div>
+
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<%@include file="/WEB-INF/views/Footer.jsp"%>
 </body>
 </html>

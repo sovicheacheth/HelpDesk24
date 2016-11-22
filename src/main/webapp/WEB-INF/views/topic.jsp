@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Student Enrollment Signup</title>
+<title>Create new topic</title>
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="datepicker/css/datepicker.css" rel="stylesheet" />
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -41,35 +41,8 @@
 </head>
 <body>
 
-	<div class="navbar navbar-default">
+	<%@include file="/WEB-INF/views/Header.jsp"%>
 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-		</div>
-
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search">
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentWithSpring">Home</a></li>
-				<li class="active"><a href="signup.html">Signup</a></li>
-				<li><a href="login.html">Login</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Explore<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Contact us</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Further Actions</a></li>
-					</ul></li>
-			</ul>
-		</div>
-		<!-- /.nav-collapse -->
-	</div>
 
 	<script src="jquery-1.8.3.js">
 		
@@ -84,17 +57,6 @@
 	</script>
 
 
-	<div class="container">
-		<div class="jumbotron">
-			<div>
-				<h1></h1>
-				<p>Its absolutely quick!</p>
-			</div>
-		</div>
-
-		<div></div>
-	</div>
-
 	<c:if test="${not empty message}">
 		<div class="message green">${message}</div>
 	</c:if>
@@ -105,13 +67,14 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<form:form id="myForm" method="post"
-							class="bs-example form-horizontal" modelAttribute="topic" action="topic">
+							class="bs-example form-horizontal" modelAttribute="topic"
+							action="topic">
 							<fieldset>
 								<legend>Enter Help Topic</legend>
 
 								<div class="form-group">
 									<label for="title" class="col-lg-3 control-label">Topic
-										</label>
+									</label>
 									<div class="col-lg-9">
 										<form:input type="text" class="form-control" path="title"
 											id="title" placeholder=" sample topic " />
@@ -119,21 +82,25 @@
 									</div>
 								</div>
 								<div class="col-lg-9 col-lg-offset-3">
-									<button class="btn btn-default">Cancel</button>
 
 									<button class="btn btn-primary">Save</button>
+
+									<button class="btn btn-default">Cancel</button>
+
+
 								</div>
 							</fieldset>
-							</form:form>
-								</div>
-
-							
-
+						</form:form>
 					</div>
+
+
+
 				</div>
 			</div>
 		</div>
+	</div>
 
+	<%@include file="/WEB-INF/views/Footer.jsp"%>
 
 </body>
 </html>

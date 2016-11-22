@@ -68,8 +68,10 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/HelpDesk24/newTicket">New
+				<li><a href="/HelpDesk24/topic">New Topic</a></li>
+				<li><a href="/HelpDesk24/newTicket">New
 						Ticket</a></li>
+
 				<li><a href="/HelpDesk24/ticketList">Ticket List</a></li>
 				<li><a href="/HelpDesk24/staffList">Staff List</a></li>
 				<!-- <li class="dropdown">

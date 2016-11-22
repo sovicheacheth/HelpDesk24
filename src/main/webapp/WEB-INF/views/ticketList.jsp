@@ -47,7 +47,17 @@
 						</a> <a class='btn btn-success btn-xs'
 							href="ticketAssignment=${ticket.id}"> <span
 								class="glyphicon glyphicon-edit"></span> Assign Ticket
-						</a> <a href="deleteUser?username=${ticket.id}"
+						</a> 
+						
+						<a class='btn btn-success btn-xs'
+							href="ticketProgress=${ticket.id}"> <span
+								class="glyphicon glyphicon-edit"></span> Update Progress
+						</a> 
+						
+						
+
+						
+						<a href="deleteTicket?id=${ticket.id}"
 							class="btn btn-danger btn-xs"> <span
 								class="glyphicon glyphicon-remove"></span> Delete
 						</a></td>
