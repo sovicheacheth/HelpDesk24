@@ -35,6 +35,7 @@ public class Ticket {
     
     private String comment;
     private String file;
+    private byte[] attachement;
     
     @Temporal(TemporalType.DATE)
 	private Date date;
@@ -93,5 +94,13 @@ public class Ticket {
 		return "Ticket [id=" + id + ", topic_id=" + topic + ", subject=" + subject + ", comment=" + comment
 				+ ", file=" + file + ", date=" + date + ", priority=" + priority + "]";
 	}
+	public byte[] getAttachement() {
+		return attachement;
+	}
+	public void setAttachement(byte[] attachement) {
+		this.attachement = attachement;
+	}
+	
+	
     
 }
