@@ -84,7 +84,7 @@
 								<div class="col-lg-9">
 									<input type="hidden" name="id" value="${topic.id}">
 									<button class="btn btn-danger">Delete</button>
-									<a href="topicList" class="btn btn-default">Cancel</a>
+									<a href="topiclist" class="btn btn-default">Cancel</a>
 								</div>
 							</div>
 
