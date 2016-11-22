@@ -28,7 +28,7 @@ public class HelptopicServiceImpl  implements HelpTopickService{
 
 	@Override
 	public HelpTopic getTopic(int id) {
-		return topicRepo.findOne((long)id);
+		return topicRepo.findOne(id);
 	}
 
 	@Override
