@@ -70,9 +70,10 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/newTicket">New Ticket</a></li>
-        <li><a href="/ticketlist">Ticket List</a></li>
-        <li class="dropdown">
+        <li class="active"><a href="/HelpDesk24/newTicket">New Ticket</a></li>
+        <li><a href="/HelpDesk24/ticketList">Ticket List</a></li>
+        <li><a href="/HelpDesk24/ticketlist">Staff List</a></li>
+        <!-- <li class="dropdown">
           <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">More <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
@@ -83,14 +84,14 @@
             <li class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <!--<form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input class="form-control" type="text" placeholder="Search">
         </div>
         <button class="btn btn-default" type="submit">Search</button>
-      </form>
+      </form>-->
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Welcome, User</a></li>
       </ul>
