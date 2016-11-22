@@ -98,11 +98,7 @@
   
   <select name="topic"class="form-control">
           
-          <option value="${ticket.topic }">${ticket.topic }</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+          <option value="${ticket.topic }">${ticket.topic }</option>         
         </select>
       </div>
     </div>
