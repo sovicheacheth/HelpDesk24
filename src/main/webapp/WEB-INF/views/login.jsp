@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Staff registration</title>
+<title>Log In</title>
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="datepicker/css/datepicker.css" rel="stylesheet" />
 <link href="assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -39,6 +39,12 @@
 	padding: 8px;
 	margin: 16px;
 }
+
+.vcenter {
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}
 </style>
 </head>
 <body>
@@ -63,8 +69,8 @@
 		<div class="message green">${message}</div>
 	</c:if>
 
-	<div class="col-lg-6 col-lg-offset-3">
-		<div class="well">
+	<div class="col-lg-6 col-lg-offset-3 align-middle">
+		<div class="well align-middle" style="margin-top:25%;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
