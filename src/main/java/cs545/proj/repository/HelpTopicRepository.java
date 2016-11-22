@@ -7,6 +7,6 @@ import cs545.proj.domain.HelpTopic;
 
 
 @Repository
-public interface HelpTopicRepository extends JpaRepository<HelpTopic, Long>{
+public interface HelpTopicRepository extends JpaRepository<HelpTopic, Integer>{
 
 }
