@@ -41,35 +41,9 @@
 </head>
 <body>
 
-	<div class="navbar navbar-default">
+	<%@include file="/WEB-INF/views/Header.jsp"%>
 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-responsive-collapse">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-		</div>
 
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search">
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/StudentEnrollmentWithSpring">Home</a></li>
-				<li class="active"><a href="signup.html">Signup</a></li>
-				<li><a href="login.html">Login</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Explore<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Contact us</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Further Actions</a></li>
-					</ul></li>
-			</ul>
-		</div>
-		<!-- /.nav-collapse -->
-	</div>
 
 	<script src="jquery-1.8.3.js">
 		
@@ -93,12 +67,12 @@
 
 						<form action="deleteStaff" method="post"
 							class="bs-example form-horizontal">
-							
-							
-						
+
+
+
 							<div class="form-group">
-								<label for="firstname" class="col-lg-3 control-label">First name
-								</label>
+								<label for="firstname" class="col-lg-3 control-label">First
+									name </label>
 								<div class="col-lg-9">
 									<input type="text" value="${staff.firstname}"
 										class="form-control" name="firstname" id="firstname"
@@ -112,8 +86,8 @@
 
 
 							<div class="form-group">
-								<label for="lastname" class="col-lg-3 control-label">Last name
-								</label>
+								<label for="lastname" class="col-lg-3 control-label">Last
+									name </label>
 								<div class="col-lg-9">
 									<input type="text" value="${staff.lastname}"
 										class="form-control" name="lastname" id="lastname"
@@ -121,39 +95,37 @@
 									<form:errors path="lastname" cssClass="error" />
 								</div>
 							</div>
-							
-							
-							
-							
-							
+
+
+
+
+
 							<div class="form-group">
 								<label for="email" class="col-lg-3 control-label">Email
 								</label>
 								<div class="col-lg-9">
-									<input type="text" value="${staff.email}"
-										class="form-control" name="subject" id="email"
-										placeholder="email" />
+									<input type="text" value="${staff.email}" class="form-control"
+										name="subject" id="email" placeholder="email" />
 									<form:errors path="email" cssClass="error" />
 								</div>
 							</div>
-					
-					
-						
+
+
+
 							<div class="form-group">
 								<label for="mobile" class="col-lg-3 control-label">Mobile
 								</label>
 								<div class="col-lg-9">
-									<input type="text" value="${staff.mobile}"
-										class="form-control" name="mobile" id="mobile"
-										placeholder="mobile" />
+									<input type="text" value="${staff.mobile}" class="form-control"
+										name="mobile" id="mobile" placeholder="mobile" />
 									<form:errors path="mobile" cssClass="error" />
 								</div>
 							</div>
-							
-							
-							
-							
-							
+
+
+
+
+
 							<input type="hidden" name="id" value="${staff.id}">
 							<button class="btn btn-danger">Delete Staff</button>
 							<a href="staffList" class="btn btn-default">Cancel</a>
@@ -166,5 +138,7 @@
 			</div>
 		</div>
 	</div>
+
+	<%@include file="/WEB-INF/views/Footer.jsp"%>
 </body>
 </html>

@@ -72,7 +72,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/HelpDesk24/newTicket">New Ticket</a></li>
         <li><a href="/HelpDesk24/ticketList">Ticket List</a></li>
-        <li><a href="/HelpDesk24/ticketlist">Staff List</a></li>
+        <li><a href="/HelpDesk24/staffList">Staff List</a></li>
         <!-- <li class="dropdown">
           <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">More <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -94,6 +94,7 @@
       </form>-->
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Welcome, User</a></li>
+        <li><a href="/HelpDesk24/">Log out</a></li>
       </ul>
     </div>
   </div>

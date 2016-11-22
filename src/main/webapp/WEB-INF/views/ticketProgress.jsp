@@ -47,7 +47,8 @@
 				<div class="form-group">
 					<label for="textArea" class="col-lg-2 control-label">Note</label>
 					<div class="col-lg-10">
-						<textarea class="form-control" rows="3" id="txtNote" value="${ticket.comment}"></textarea>
+						<textarea class="form-control" rows="3" id="txtNote"
+							value="${ticket.comment}"></textarea>
 					</div>
 				</div>
 
@@ -63,6 +64,8 @@
 
 	<div></div>
 </div>
+
+<%@include file="/WEB-INF/views/Footer.jsp"%>
 
 
 </body>
