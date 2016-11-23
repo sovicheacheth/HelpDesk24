@@ -35,61 +35,66 @@ public class AssingmentController {
 	TicketService ticketService;
 	@Autowired
 	TicketAssignmentService assignmentService;
-	
+
 	@Autowired
 	StaffService staffService;
-	
+
 	@RequestMapping(value = "/ticketAssignment={id}", method = RequestMethod.GET)
 	public String getTicket(@PathVariable("id") int id, Model model) {
 		model.addAttribute("ticket", ticketService.getTicketById(id));
 		Map<Integer, String> staffmap = new LinkedHashMap<Integer, String>();
-	
-	
-		for(Staff s :staffService.getAllByposition("Technician")){
+
+		for (Staff s : staffService.getAllByposition("Technician")) {
 			staffmap.put(s.getId(), s.getFirstname());
 		}
-		
-		model.addAttribute("staffMap", staffmap);	
+
+		model.addAttribute("staffMap", staffmap);
 		TicketAssignment ta = new TicketAssignment();
 		model.addAttribute("ticketAssignment", ta);
 		System.out.println(staffmap);
 		System.out.println(staffmap.keySet());
-		//model.addAttribute("enum", Priority.values());
+		model.addAttribute("enum", Priority.values());
 		return "ticketAssignment";
 
 	}
 
 	@RequestMapping(value = "/ticketAssignment", method = RequestMethod.POST)
-	public String assignTicket(@RequestParam(value = "id") int id, @Valid @ModelAttribute("ticketAssignment") TicketAssignment ticketassign, BindingResult result, Model model) {
-		
+	public String assignTicket(@RequestParam(value = "id") int id,
+			@Valid @ModelAttribute("ticketassignment") TicketAssignment ticketassign, BindingResult result,
+			Model model) {
+
 		System.out.println(result.getFieldError());
-		
+
 		if (result.hasErrors()) {
 			System.out.println("Error ticket assignment");
 			return "ticketList";
 		} else {
-			
+
 			TicketAssignment ta = new TicketAssignment();
-			
-			//Set Date
+
+			// Set Date
 			Date nowTime = new Date();
-			ta.setDate(nowTime);	
-			
+			ta.setDate(nowTime);
+
 			ta.setId(ticketassign.getId());
 			ta.setPriority(ticketassign.getPriority());
-			ta.setTicket_id(ticketassign.getTicket_id());
+			ta.setTicket_id(id);
 			ta.setStaff_id(ticketassign.getStaff_id());
-			
-			assignmentService.AssignTicket(ta);
-			
-			model.addAttribute("id", id);
-			
-			System.out.println(nowTime);
-			System.out.println(ticketassign.getPriority());
-			System.out.println(ticketassign.getTicket_id());
-			System.out.println(ticketassign.getStaff_id());
 
-			return "redirect:/ticketList";
+			assignmentService.AssignTicket(ta);
+
+			//model.addAttribute("id", id);
+
+			// System.out.println(nowTime);
+			// System.out.println(ticketassign.getPriority());
+			// System.out.println(ticketassign.getTicket_id());
+			// System.out.println(ticketassign.getStaff_id());
+
+			System.out.println(id);
+			
+			model.addAttribute("ticketAssignment", ta);
+
+			return "ticketAssignList";
 		}
 	}
 
