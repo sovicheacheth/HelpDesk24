@@ -57,7 +57,7 @@
 	</script>
 
 
-	<h3>WelCome to Helpdesk24</h3>
+	<h3>Welcome to HelpDesk24</h3>
 
 	<%@include file="/WEB-INF/views/Footer.jsp"%>
 

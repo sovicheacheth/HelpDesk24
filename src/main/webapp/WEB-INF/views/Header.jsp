@@ -64,7 +64,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/index">IT-HelpDesk24</a>
+			<a class="navbar-brand" href="/HelpDesk24/Home">IT-HelpDesk24</a>
 		</div>
 
 		<div class="collapse navbar-collapse"
@@ -97,11 +97,11 @@
 					</sec:authorize></li>
 
 				<li><sec:authorize access="hasAnyRole('ROLE_ADMIN')">
-						<a href="<c:url value="/staffList" />">Assign List</a>
+						<a href="<c:url value="/assignList" />">Assign List</a>
 					</sec:authorize></li>
 
 				<li><sec:authorize access="hasAnyRole('ROLE_TECH')">
-						<a href="<c:url value="/staffList" />">Progress List</a>
+						<a href="<c:url value="/progressList" />">Progress List</a>
 					</sec:authorize></li>
 
 

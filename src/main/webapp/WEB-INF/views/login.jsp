@@ -65,13 +65,14 @@
 	<c:if test="${not empty message}">
 		<div class="message green">${message}</div>
 	</c:if>
-											
-											
-											
-											<div  class="col-lg-6 col-lg-offset-3 align-middle" style="margin-top: 5%; margin-left:35%;">
-											<h2>Welcome to IT HelpDesk24!</h2>
-											</div>
-											
+
+
+
+	<div class="col-lg-6 col-lg-offset-3 align-middle"
+		style="margin-top: 5%; margin-left: 35%;">
+		<h2>Welcome to IT HelpDesk24!</h2>
+	</div>
+
 	<div class="col-lg-6 col-lg-offset-3 align-middle">
 		<div class="well align-middle" style="margin-top: 5%;">
 			<div class="container">
@@ -88,7 +89,8 @@
 									<label for="username" class="col-lg-3 control-label">UserName
 									</label>
 									<div class="col-lg-9">
-										<input type="text" class="form-control" name="username" id="username" />
+										<input type="text" class="form-control" name="username"
+											id="username" />
 									</div>
 								</div>
 
@@ -104,8 +106,7 @@
 
 
 								<div class="form-group">
-									<div class="col-lg-3">
-									</div>
+									<div class="col-lg-3"></div>
 									<div class="col-lg-9">
 										<button type="submit" class="btn btn-primary ">Login</button>
 										<a href="register"><button class="btn btn-primary ">Register</button></a>
