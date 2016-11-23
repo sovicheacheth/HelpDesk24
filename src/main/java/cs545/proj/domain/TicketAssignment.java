@@ -23,13 +23,10 @@ public class TicketAssignment {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-    @NotBlank
-    private Staff staff_id;
+	//Error when using onetoone relation
+    private String staff_id;
 
-    @NotBlank
-    @OneToOne(cascade=CascadeType.ALL)
-    private Ticket ticket_id;
+    private int ticket_id;
     
     private String priority;
   
@@ -53,21 +50,21 @@ public class TicketAssignment {
 		this.id = id;
 	}
 
-	public Staff getStaff_id() {
-		return staff_id;
-	}
-
-	public void setStaff_id(Staff staff_id) {
-		this.staff_id = staff_id;
-	}
-
-	public Ticket getTicket_id() {
-		return ticket_id;
-	}
-
-	public void setTicket_id(Ticket ticket_id) {
-		this.ticket_id = ticket_id;
-	}
+//	public Staff getStaff_id() {
+//		return staff_id;
+//	}
+//
+//	public void setStaff_id(Staff staff_id) {
+//		this.staff_id = staff_id;
+//	}
+//
+//	public Ticket getTicket_id() {
+//		return ticket_id;
+//	}
+//
+//	public void setTicket_id(Ticket ticket_id) {
+//		this.ticket_id = ticket_id;
+//	}
 
 //	public Priority getPriority() {
 //		return priority;
@@ -76,6 +73,22 @@ public class TicketAssignment {
 //	public void setPriority(Priority priority) {
 //		this.priority = priority;
 //	}
+
+	public String getStaff_id() {
+		return staff_id;
+	}
+
+	public void setStaff_id(String staff_id) {
+		this.staff_id = staff_id;
+	}
+
+	public int getTicket_id() {
+		return ticket_id;
+	}
+
+	public void setTicket_id(int ticket_id) {
+		this.ticket_id = ticket_id;
+	}
 
 	public String getPriority() {
 		return priority;
