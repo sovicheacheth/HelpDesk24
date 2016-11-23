@@ -44,14 +44,13 @@
 
 				<legend>Ticket Assignment</legend>
 				
-				<input type="hidden" name="id" value="${ticket.id}">
-
+				<input type="hidden" name="id" path="ticket_id" value="${ticket.id}">
 
 				<div class="form-group">
 					<label for="inputEmail" class="col-lg-3 control-label">Title</label>
 					<div class="col-lg-9">
 
-						<input type="text" class="form-control" name="ticket_id" id="ticket_id"
+						<input type="text" class="form-control"
 							value="${ticket.id}">
 					</div>
 				</div>
