@@ -1,9 +1,6 @@
 package cs545.proj.domain;
 
-import java.util.List;
-
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -19,6 +16,8 @@ public class Account {
 	private String password;
 	@Enumerated(EnumType.STRING)
 	
+	
+//	  @Enumerated(EnumType.STRING)
 	private Role role;
 	public String getUsername() {
 		return username;
