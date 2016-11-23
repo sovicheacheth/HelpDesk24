@@ -13,13 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import cs545.proj.domain.Account;
 import cs545.proj.domain.Role;
 import cs545.proj.domain.Staff;
-import cs545.proj.domain.Ticket;
 import cs545.proj.service.AccountService;
 import cs545.proj.service.StaffService;
+import cs545.proj.service.impl.EmailServiceImpl;
 
 @Controller
 public class StaffController {
@@ -30,6 +29,8 @@ public class StaffController {
 	@Autowired
 	AccountService accountService;
 
+	@Autowired
+	EmailServiceImpl emailService;
 	
 	//Registration
 	
@@ -61,6 +62,8 @@ public class StaffController {
 			accountService.saveAccount(account);
 
 			staffService.StaffRegister(staff);
+			
+			emailService.RegistrationEMail(staff.getEmail(), staff.getFirstname());
 
 			return "redirect:login";
 		}

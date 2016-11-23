@@ -24,6 +24,8 @@
 		<intercept-url pattern="/topic" access="hasRole('ROLE_ADMIN')" />
 			<intercept-url pattern="/ticketList" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/ticketAssignment" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/editStaff" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/deleteStaff" access="hasRole('ROLE_ADMIN')" />
 		
 		
 		<form-login login-page="/login" 

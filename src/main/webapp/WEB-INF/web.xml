@@ -20,6 +20,7 @@
     <param-value>
        		/WEB-INF/spring/context/applicationContext.xml
  			/WEB-INF/spring/context/security-context.xml
+ 			/WEB-INF/spring/context/email.xml
  		</param-value>
   </context-param>
   <listener>
@@ -27,6 +28,11 @@
 			org.springframework.web.context.ContextLoaderListener 
 		</listener-class>
   </listener>
+  
+ 
+  
+  
+  
   
   <filter>
     <filter-name>openEntityManagerInView</filter-name>
