@@ -16,4 +16,6 @@ public interface StaffRepository extends JpaRepository<Staff, Integer> {
 	  
 	  @Query("select u.email from Staff u")
 		List<String> getListOfEmails();
+
+	List<Staff> findAllByposition(String position);
 }
