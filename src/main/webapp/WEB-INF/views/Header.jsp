@@ -51,7 +51,6 @@
 	padding: 8px;
 	margin: 16px;
 }
-
 </style>
 </head>
 <body>
@@ -95,6 +94,14 @@
 
 				<li><sec:authorize access="hasAnyRole('ROLE_ADMIN')">
 						<a href="<c:url value="/staffList" />">Staff List</a>
+					</sec:authorize></li>
+
+				<li><sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+						<a href="<c:url value="/staffList" />">Assign List</a>
+					</sec:authorize></li>
+
+				<li><sec:authorize access="hasAnyRole('ROLE_TECH')">
+						<a href="<c:url value="/staffList" />">Progress List</a>
 					</sec:authorize></li>
 
 
