@@ -83,7 +83,7 @@ public class AssingmentController {
 
 			assignmentService.AssignTicket(ta);
 
-			//model.addAttribute("id", id);
+			// model.addAttribute("id", id);
 
 			// System.out.println(nowTime);
 			// System.out.println(ticketassign.getPriority());
@@ -91,10 +91,10 @@ public class AssingmentController {
 			// System.out.println(ticketassign.getStaff_id());
 
 			System.out.println(id);
-			
+
 			model.addAttribute("ticketAssignment", ta);
 
-			return "ticketAssignList";
+			return "redirect:ticketList";
 		}
 	}
 
