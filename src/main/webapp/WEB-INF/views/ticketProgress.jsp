@@ -4,20 +4,23 @@
 
 <div class="container">
 	<div class="jumbotron">
-		<form class="form-horizontal">
+		<form:form id="myform" method="POST"
+			class="bs-example form-horizontal" modelAttribute="ticketProgress"
+			action="ticketProgress">
 			<fieldset>
 				<legend>Ticket Progress</legend>
 
 				<input type="hidden" name="id" value="${ticket.id}">
 
 				<div class="form-group">
-					<label for="inputEmail" class="col-lg-2 control-label">Title</label>
+					<label for="inputEmail" class="col-lg-2 control-label">Subject</label>
 					<div class="col-lg-10">
 						<input type="text" class="form-control" id="txtTicketTitle"
 							value="${ticket.subject}">
 					</div>
 				</div>
 
+				<!--  Date  -->
 				<div class="form-group">
 					<label for="inputEmail" class="col-lg-2 control-label">Date</label>
 					<div class="col-lg-10">
@@ -28,27 +31,25 @@
 					</div>
 				</div>
 
-				<!-- Select Priority -->
+				<!-- Select Status -->
 				<div class="form-group">
-					<label for="select" class="col-lg-2 control-label">Status</label>
+					<label class="col-lg-2 control-label" for="status">Select Status</label>
 					<div class="col-lg-10">
-						<select value="${ticket.priority}" class="form-control"
-							id="priority">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
+						<form:select path="status" class="form-control">
+							<option>New</option>
+							<option>In-progress</option>
+							<option>Cancel</option>
+							<option>Completed</option>
+							<option>Closed</option>
+						</form:select>
 					</div>
 				</div>
 
 
 				<div class="form-group">
-					<label for="textArea" class="col-lg-2 control-label">Note</label>
+					<label class="col-lg-2 control-label" for="note">Note</label>
 					<div class="col-lg-10">
-						<textarea class="form-control" rows="3" id="txtNote"
-							value="${ticket.comment}"></textarea>
+						<form:textarea path="note" class="form-control" rows="3" placeholder="Enter your note"/>
 					</div>
 				</div>
 
@@ -59,7 +60,7 @@
 					</div>
 				</div>
 			</fieldset>
-		</form>
+		</form:form>
 	</div>
 
 	<div></div>
