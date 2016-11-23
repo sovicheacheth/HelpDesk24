@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import cs545.proj.domain.Staff;
 import cs545.proj.domain.Ticket;
 import cs545.proj.domain.TicketProgress;
+import cs545.proj.service.EmailService;
 import cs545.proj.service.StaffService;
 import cs545.proj.service.TicketProgressService;
 import cs545.proj.service.TicketService;
@@ -33,6 +34,9 @@ public class ProgressController {
 
 	@Autowired
 	StaffService staffService;
+
+	@Autowired
+	EmailService emailService;
 
 	@RequestMapping(value = "/ticketProgress={id}", method = RequestMethod.GET)
 	public String getTicket(@PathVariable("id") int id, Model model) {
@@ -82,6 +86,11 @@ public class ProgressController {
 			// System.out.println(ticketprogress.getStatus());
 
 			model.addAttribute("ticketProgress", tp);
+
+			String email = staffService.getStaffById(ticketprogress.getStaff_id()).getEmail();
+			String username = staffService.getStaffById(ticketprogress.getStaff_id()).getUsername();
+
+			emailService.assignTicketEmail(email, username, ticketprogress.getId());
 
 			return "redirect:ticketList";
 		}

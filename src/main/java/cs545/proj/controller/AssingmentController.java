@@ -25,6 +25,7 @@ import cs545.proj.domain.Staff;
 import cs545.proj.domain.Ticket;
 import cs545.proj.domain.TicketAssignment;
 import cs545.proj.domain.TicketProgress;
+import cs545.proj.service.EmailService;
 import cs545.proj.service.StaffService;
 import cs545.proj.service.TicketAssignmentService;
 import cs545.proj.service.TicketService;
@@ -39,6 +40,9 @@ public class AssingmentController {
 
 	@Autowired
 	StaffService staffService;
+
+	@Autowired
+	EmailService emailService;
 
 	@RequestMapping(value = "/ticketAssignment={id}", method = RequestMethod.GET)
 	public String getTicket(@PathVariable("id") int id, Model model) {
@@ -95,10 +99,15 @@ public class AssingmentController {
 
 			model.addAttribute("ticketAssignment", ta);
 
+			String email = staffService.getStaffById(Integer.parseInt(ticketassign.getStaff_id())).getEmail();
+			String username = staffService.getStaffById(Integer.parseInt(ticketassign.getStaff_id())).getUsername();
+
+			emailService.assignTicketEmail(email, username, ticketassign.getId());
+
 			return "redirect:ticketList";
 		}
 	}
-	
+
 	@RequestMapping(value = "/assignList", method = RequestMethod.GET)
 	public String getAllProgressTicket(Model model) {
 
