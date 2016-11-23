@@ -11,6 +11,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,6 +19,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Ticket {
@@ -34,17 +36,13 @@ public class Ticket {
     private String subject;
     
     private String comment;
-    private String file;
-    private byte[] attachement;
-    
+
     @Temporal(TemporalType.DATE)
 	private Date date;
    
     private String priority;
 	public int getId() {
 		return id;
-	
-	
 	
 	}
 	public void setId(int id) {
@@ -62,12 +60,7 @@ public class Ticket {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public String getFile() {
-		return file;
-	}
-	public void setFile(String file) {
-		this.file = file;
-	}
+	
 	public Date getDate() {
 		return date;
 	}
@@ -92,14 +85,10 @@ public class Ticket {
 	@Override
 	public String toString() {
 		return "Ticket [id=" + id + ", topic_id=" + topic + ", subject=" + subject + ", comment=" + comment
-				+ ", file=" + file + ", date=" + date + ", priority=" + priority + "]";
+				+", date=" + date + ", priority=" + priority + "]";
 	}
-	public byte[] getAttachement() {
-		return attachement;
-	}
-	public void setAttachement(byte[] attachement) {
-		this.attachement = attachement;
-	}
+	
+	
 	
 	
     

@@ -25,66 +25,27 @@ public class LoginController {
 	
 	AccountService accountService;
 	
-	
-	
+	@RequestMapping(value="/Home", method = RequestMethod.GET)
+	public String Home(Model model) {
+			
+ 		return "Home";
+	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(Model model) {
-		
-		Account account=new Account();
-		model.addAttribute(account);
-		
  		return "login";
 	}
-	
-	
-	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String createTicket(@Valid @ModelAttribute("account") Account account, BindingResult result, Model model) {		
-		
-		System.out.println(result.getFieldErrors());
-		if(result.hasErrors()){
-		
-			return "login";
-		}
-		
-		else
-		{
-		
-		
-	//	System.out.println(account);
-		
-		Account acc= accountService.getAccount(account.getUsername());
-		
-		if(acc==null)
-			return "login";
-		
-		if(acc.getPassword().equals(account.getPassword()))
-
-//			{
-//			
-//			if(account.getRole().equals(Role.ADMIN))
-//				return "staffList";
-//			
-//		
-//			if(account.getRole().equals(Role.TECHNICIAN))
-//				return "staffList";
-//		
-//			if(account.getRole().equals(Role.STAFF))
-//				return "staffList";
-//			
-//		}
-		
-		return "redirect:staffList";
-			
-		}
+ 
+	@RequestMapping(value="/loginFailed", method = RequestMethod.GET)
+	public String loginerror(Model model) {
+		model.addAttribute("message", "Login Failed Please try again ");
 		return "login";
 	}
-	
-
+ 
 	
 	
 	@RequestMapping(value="/logoutSuccess", method = RequestMethod.GET)
 	public String logout(Model model) {
- 		return "redirect:/index";
+ 		return "redirect:/Home";
  	}
 }

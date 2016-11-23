@@ -98,14 +98,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<label for="file" class="col-lg-3 control-label">file
-									upload </label>
-								<div class="col-lg-9">
-									<input type="text" value="${ticket.file}" class="form-control"
-										name="file" id="file" placeholder=" sample topic " />
-								</div>
-							</div>
+					
 							<div class="form-group">
 								<label class="col-lg-3 control-label" for="priority">Selects</label>
 								<div class="col-lg-9">

@@ -4,6 +4,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -69,31 +71,37 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="/HelpDesk24/topic">New Topic</a></li>
-				<li><a href="/HelpDesk24/newTicket">New
-						Ticket</a></li>
 
-				<li><a href="/HelpDesk24/ticketList">Ticket List</a></li>
-				<li><a href="/HelpDesk24/staffList">Staff List</a></li>
-				<!-- <li class="dropdown">
-          <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">More <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>-->
+
+
+
+				<li><sec:authorize access="hasAnyRole('ROLE_STAFF')">
+						<a href="<c:url value="/newTicket" />">New Ticket</a>
+					</sec:authorize></li>
+
+				<li><sec:authorize access="hasAnyRole('ROLE_TECH')">
+						<a href="<c:url value="/AssignedTicket" />"> Assigned Tickets</a>
+					</sec:authorize></li>
+
+				<li><sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+						<a href="<c:url value="/topic" />">New Topic</a>
+					</sec:authorize></li>
+
+
+				<li><sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+						<a href="<c:url value="/ticketList" />">Ticket List</a>
+					</sec:authorize></li>
+
+
+				<li><sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+						<a href="<c:url value="/staffList" />">Staff List</a>
+					</sec:authorize></li>
+
+
+
+
 			</ul>
-			<!--<form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input class="form-control" type="text" placeholder="Search">
-        </div>
-        <button class="btn btn-default" type="submit">Search</button>
-      </form>-->
+
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Welcome, User</a></li>
 				<li><a href="/HelpDesk24/">Log out</a></li>

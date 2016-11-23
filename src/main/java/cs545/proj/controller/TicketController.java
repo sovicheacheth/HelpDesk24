@@ -68,29 +68,20 @@ public class TicketController {
 	}
 
 	@RequestMapping(value = "/newTicket", method = RequestMethod.POST)
-	public String upload(HttpServletRequest request,
-	                            @RequestParam CommonsMultipartFile[] attachement,@Valid @ModelAttribute("ticket")
-	                            Ticket ticket, BindingResult result, Model model) throws Exception {
+	public String createTicket(@Valid @ModelAttribute("ticket") Ticket ticket, BindingResult result, Model model) {
+
 	   
-		System.out.println(result.getAllErrors());
+		System.out.println(result.getFieldErrors());
 		if (result.hasErrors()) {
 			return "newTicket";
+		} else {
+			Date nowTime = new Date();
+			ticket.setDate(nowTime);
+			System.out.println(ticket);
+
+			ticketService.TicketRegister(ticket);
+			return "redirect:/myticketlist";
 		}
-		else if (attachement != null && attachement.length > 0) {
-	        for (CommonsMultipartFile file : attachement){
-	            System.out.println("File Name: " + file.getOriginalFilename());
-	            System.out.println("File Data: " + Arrays.toString( file.getBytes() ));
-	        }
-	        
-	        String myBase64 = new String(Base64.encodeBase64(ticket.getAttachement()));
-	        model.addAttribute("imageBase64", myBase64);
-	        Date nowTime = new Date();
-			ticket.setDate(nowTime);	
-	        ticketService.TicketRegister(ticket);
-			
-           
-	    }
-		 return "redirect:/ticketList";
 	}  
 	
 	
@@ -140,7 +131,32 @@ public class TicketController {
 		return "ticketList";
 
 	}
+	@RequestMapping(value = "/myticketlist", method = RequestMethod.GET)
+	public String getallMyticket(Model model) {
 
+		String goodMessage = "";
+		String badMessage = "";
+		List<Ticket> tickets = null;
+
+		try {
+			tickets = ticketService.getTicketList();
+			if (tickets.size() == 0) {
+				goodMessage = "There is no ticket!";
+			}
+
+		} catch (Exception e) {
+			badMessage = "A problem has ocurred!";
+		}
+
+		model.addAttribute("goodMessage", goodMessage);
+		model.addAttribute("badMessage", badMessage);
+		model.addAttribute("tickets", tickets);
+		return "myticketList";
+
+	}
+	
+	
+	
 	@RequestMapping(value = "/closeTicket/{id}", method = RequestMethod.GET)
 	public String closeTicket(@PathVariable("id") int id, Model model) {
 		if (progessService.getTicketStatus(id).contains(Status.COMPLETED)) {

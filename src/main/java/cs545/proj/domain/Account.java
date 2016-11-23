@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
@@ -16,8 +17,8 @@ public class Account {
 	private String username;
 	@NotNull
 	private String password;
+	@Enumerated(EnumType.STRING)
 	
-	@Enumerated
 	private Role role;
 	public String getUsername() {
 		return username;

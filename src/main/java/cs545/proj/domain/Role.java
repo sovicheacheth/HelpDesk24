@@ -1,5 +1,5 @@
 package cs545.proj.domain;
 
 public enum Role {
-ADMIN,STAFF,TECHNICIAN
+ROLE_ADMIN,ROLE_STAFF,ROLE_TECH
 }

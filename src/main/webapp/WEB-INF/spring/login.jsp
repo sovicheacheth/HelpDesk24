@@ -71,32 +71,32 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-					
-						<form:form id="myForm" method="post" modelAttribute="command"
-							class="bs-example form-horizontal"
-							action="login" >
+						<form:form id="myForm" method="post"
+							class="bs-example form-horizontal" modelAttribute="account"
+							action="login">
+
 
 							<fieldset>
 								<legend>Welcome</legend>
 
 								<div class="form-group">
-									<label for="username" class="col-lg-3 control-label">UserName
+									<label for="file" class="col-lg-3 control-label">UserName
 									</label>
 									<div class="col-lg-9">
-
-										<input type="text"  name="username"
-											id="username" /> -
+										<form:input type="text" class="form-control" path="username"
+											id="account.username" placeholder=" User Name " />
 									</div>
 								</div>
 
+
+
 								<div class="form-group">
-									<label for="password" class="col-lg-3 control-label">PassWord
+									<label for="file" class="col-lg-3 control-label">PassWord
 									</label>
 									<div class="col-lg-9">
-
-										<input type="password" class="form-control"
-											name="password" id="password" />
-<!-- 									</div> -->
+										<form:input type="password" class="form-control"
+											path="password" id="account.password" placeholder=" PassWord" />
+									</div>
 								</div>
 
 

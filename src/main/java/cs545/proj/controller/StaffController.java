@@ -56,7 +56,7 @@ public class StaffController {
 			Account account=new Account();
 			account.setUsername(staff.getUsername());
 			account.setPassword(staff.getPassword());
-			account.setRole(Role.STAFF);
+			account.setRole(Role.ROLE_STAFF);
 			
 			accountService.saveAccount(account);
 

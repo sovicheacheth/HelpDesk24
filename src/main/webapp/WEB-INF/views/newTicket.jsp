@@ -56,18 +56,6 @@
 		
 	</script>
 
-
-	<!-- <div class="container">
-		<div class="jumbotron">
-			<div>
-				<h1></h1>
-				<p>Its absolutely quick!</p>
-			</div>
-		</div>
-
-		<div></div>
-	</div>-->
-
 	<c:if test="${not empty message}">
 		<div class="message green">${message}</div>
 	</c:if>
@@ -79,7 +67,7 @@
 					<div class="col-lg-6">
 						<form:form id="myform" method="post"
 							class="bs-example form-horizontal" modelAttribute="ticket"
-							action="newTicket" enctype="multipart/form-data">
+							action="newTicket">
 							<fieldset>
 								<legend>Create New Ticket </legend>
 
@@ -96,7 +84,7 @@
 								</div>
 
 								<div class="form-group">
-									<label for="subject" class="col-lg-3 control-label">Topic
+									<label for="subject" class="col-lg-3 control-label">Subject
 									</label>
 									<div class="col-lg-9">
 										<form:input type="text" class="form-control" path="subject"
@@ -110,22 +98,15 @@
 									<div class="col-lg-9">
 										<form:textarea path="comment" class="form-control" rows="3" />
 									</div>
-								</div>
-								
-								<div class="form-group">
-									<label class="col-lg-3 control-label" for="comment">Upload File</label>
-									<div class="col-lg-9">
-										<input type="file" name="attachement" />
-									</div>
-								</div>
+								</div>														
 
 								<div class="form-group">
 									<label class="col-lg-3 control-label" for="priority">Selects</label>
 									<div class="col-lg-9">
 										<form:select path="priority" class="form-control">
 
-											<option>1</option>
-											<option>2</option>
+											<option>Low</option>
+											<option>Medium</option>
 											<option>High</option>
 											<option>Urgent</option>
 											<option>Critical</option>
@@ -133,10 +114,7 @@
 									</div>
 								</div>
 
-
-								<div class="col-lg-9 col-lg-offset-3">
-									
-
+								<div class="col-lg-9 col-lg-offset-3">									
 									<button class="btn btn-primary">Submit</button>
 								</div>
 							</fieldset>

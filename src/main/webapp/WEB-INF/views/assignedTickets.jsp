@@ -32,21 +32,12 @@
 						<td>${ticket.subject}</td>
 						<td>${ticket.date}</td>
 						<td>${ticket.priority}</td>
-						<td><a class='btn btn-info btn-xs'
-							href="editTicket?id=${ticket.id}"> <span
-								class="glyphicon glyphicon-edit"></span> Edit
-						</a> <a class='btn btn-success btn-xs'
-							href="ticketAssignment=${ticket.id}"> <span
-							
-								class="glyphicon glyphicon-edit"></span> Assign Ticket
-						</a> <a class='btn btn-success btn-xs'
+						<td> 
+						
+						 <a class='btn btn-success btn-xs'
 							href="ticketProgress=${ticket.id}"> <span
 								class="glyphicon glyphicon-edit"></span> Update Progress
-						</a> <a href="deleteTicket?id=${ticket.id}"
-							class="btn btn-danger btn-xs"> <span
-								class="glyphicon glyphicon-remove"></span> Delete
-						</a></td>
-
+						</a> 
 					</tr>
 				</c:forEach>
 			</c:if>
