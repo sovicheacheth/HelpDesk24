@@ -22,23 +22,31 @@ public class TicketProgress {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@NotBlank
+//	@NotBlank
 	private String note;
 
-	@NotBlank
-	@Enumerated
-	private Status status;
+//	@NotBlank
+//	@Enumerated
+//	private Status status;
+	
+	private String status;
 
 	@Temporal(TemporalType.DATE)
 	private Date date;
 	
-	@NotNull
-	@ManyToOne(cascade=CascadeType.ALL)  
-	private Staff staff_id;
+//	@NotNull
+//	@ManyToOne(cascade=CascadeType.ALL)  
+//	private Staff staff_id;
+//	
+//	@NotNull
+//	@ManyToOne(cascade=CascadeType.ALL)  
+//	private Ticket ticket_id;
 	
-	@NotNull
-	@ManyToOne(cascade=CascadeType.ALL)  
-	private Ticket ticket_id;
+	
+	private int staff_id;
+	
+	private int ticket_id;
+	
 	public int getId() {
 		return id;
 	}
@@ -51,10 +59,10 @@ public class TicketProgress {
 	public void setNote(String note) {
 		this.note = note;
 	}
-	public Status getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public Date getDate() {
@@ -63,16 +71,16 @@ public class TicketProgress {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Staff getStaff_id() {
+	public int getStaff_id() {
 		return staff_id;
 	}
-	public void setStaff_id(Staff staff_id) {
+	public void setStaff_id(int staff_id) {
 		this.staff_id = staff_id;
 	}
-	public Ticket getTicket_id() {
+	public int getTicket_id() {
 		return ticket_id;
 	}
-	public void setTicket_id(Ticket ticket_id) {
+	public void setTicket_id(int ticket_id) {
 		this.ticket_id = ticket_id;
 	}
 	
