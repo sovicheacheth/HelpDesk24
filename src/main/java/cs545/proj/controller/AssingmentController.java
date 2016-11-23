@@ -24,6 +24,7 @@ import cs545.proj.domain.Priority;
 import cs545.proj.domain.Staff;
 import cs545.proj.domain.Ticket;
 import cs545.proj.domain.TicketAssignment;
+import cs545.proj.domain.TicketProgress;
 import cs545.proj.service.StaffService;
 import cs545.proj.service.TicketAssignmentService;
 import cs545.proj.service.TicketService;
@@ -96,6 +97,19 @@ public class AssingmentController {
 
 			return "redirect:ticketList";
 		}
+	}
+	
+	@RequestMapping(value = "/assignList", method = RequestMethod.GET)
+	public String getAllProgressTicket(Model model) {
+
+		List<TicketAssignment> ta = null;
+
+		ta = assignmentService.getAssignedTickets();
+		model.addAttribute("assigns", ta);
+
+		System.out.println(ta);
+		return "assignList";
+
 	}
 
 }

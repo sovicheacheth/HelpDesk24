@@ -1,6 +1,7 @@
 package cs545.proj.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import cs545.proj.domain.Staff;
+import cs545.proj.domain.Ticket;
 import cs545.proj.domain.TicketProgress;
 import cs545.proj.service.StaffService;
 import cs545.proj.service.TicketProgressService;
@@ -53,7 +55,7 @@ public class ProgressController {
 			@Valid @ModelAttribute("ticketprogress") TicketProgress ticketprogress, BindingResult result, Model model) {
 
 		System.out.println(result.getFieldError());
-		
+
 		Staff staff = new Staff();
 		staff = (Staff) staffService.getStaffById(id);
 
@@ -61,7 +63,7 @@ public class ProgressController {
 			System.out.println("Error set ticket progress");
 			return "ticketList";
 		} else {
-			
+
 			model.addAttribute("staff", staff);
 
 			TicketProgress tp = new TicketProgress();
@@ -72,20 +74,30 @@ public class ProgressController {
 			tp.setId(id);
 			tp.setNote(ticketprogress.getNote());
 			tp.setStatus(ticketprogress.getStatus());
-			tp.setStaff_id(staff.getId());	
+			tp.setStaff_id(staff.getId());
 			tp.setTicket_id(id);
-			
 
-			
 			progressService.saveProgress(tp);
-			
-			//System.out.println(ticketprogress.getStatus());
-			
 
-			model.addAttribute("ticketProgress",tp);
+			// System.out.println(ticketprogress.getStatus());
+
+			model.addAttribute("ticketProgress", tp);
 
 			return "redirect:ticketList";
 		}
+
+	}
+
+	@RequestMapping(value = "/progressList", method = RequestMethod.GET)
+	public String getAllProgressTicket(Model model) {
+
+		List<TicketProgress> tp = null;
+
+		tp = progressService.getProgressList();
+		model.addAttribute("progress", tp);
+
+		System.out.println(tp);
+		return "progressList";
 
 	}
 
