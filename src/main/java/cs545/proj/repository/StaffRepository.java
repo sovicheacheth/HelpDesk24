@@ -12,7 +12,8 @@ import cs545.proj.domain.Staff;
 @Repository
 public interface StaffRepository extends JpaRepository<Staff, Integer> {
 
-	//@Query("select u.id,u.firstName,u.lastName from staff u where u.position =:'Technician'")
-	
-	  List<Staff> findAllByposition(String position);
+
+	  
+	  @Query("select u.email from Staff u")
+		List<String> getListOfEmails();
 }
