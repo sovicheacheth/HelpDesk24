@@ -29,7 +29,7 @@ public class progressServiceImpl  implements TicketProgressService{
 
 	@Override
 	public TicketProgress getProgressTicketId(int id) {
-		return progressRepo.findOne(id);
+		return progressRepo.findOne((long) id);
 	}
 
 	@Override

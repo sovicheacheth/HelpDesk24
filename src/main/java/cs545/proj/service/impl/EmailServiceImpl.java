@@ -42,4 +42,48 @@ public class EmailServiceImpl implements EmailService{
 			ex.printStackTrace();
 		}
 	}	
+	
+	public void assignTicketEmail(String email,String userName, int ticketId) {
+		try {
+
+			String fromAddress = String.format("IT HelpDesk <ITHelpDesk.com>");
+
+			String subject = "Ticket Has Been Assigned to you";
+
+			String msgBody = String.format("<html><body>Dear "+ userName + " , </br>A ticket has been assigned to you!!</br> !</body></html>");
+
+			MimeMessage mimeMessage = mailSender.createMimeMessage();
+			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+			
+			mimeMessage.setContent(msgBody, "text/html");
+			helper.setTo(email);
+			helper.setSubject(subject);
+			helper.setFrom(fromAddress);
+			mailSender.send(mimeMessage);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}	
+	
+	public void progressTicketEmail(String email,String userName, int ticketId) {
+		try {
+
+			String fromAddress = String.format("IT HelpDesk <ITHelpDesk.com>");
+
+			String subject = "Ticket Progress Updated";
+
+			String msgBody = String.format("<html><body>Dear "+ userName + " , </br>You have update a ticket progress!!!</br> !</body></html>");
+
+			MimeMessage mimeMessage = mailSender.createMimeMessage();
+			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+			
+			mimeMessage.setContent(msgBody, "text/html");
+			helper.setTo(email);
+			helper.setSubject(subject);
+			helper.setFrom(fromAddress);
+			mailSender.send(mimeMessage);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}	
 }
