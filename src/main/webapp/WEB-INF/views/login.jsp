@@ -65,27 +65,30 @@
 	<c:if test="${not empty message}">
 		<div class="message green">${message}</div>
 	</c:if>
-
+											
+											
+											
+											<div  class="col-lg-6 col-lg-offset-3 align-middle" style="margin-top: 5%; margin-left:35%;">
+											<h2>Welcome to IT HelpDesk24!</h2>
+											</div>
+											
 	<div class="col-lg-6 col-lg-offset-3 align-middle">
-		<div class="well align-middle" style="margin-top:25%;">
+		<div class="well align-middle" style="margin-top: 5%;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-					
+
 						<form:form id="myForm" method="post" modelAttribute="command"
-							class="bs-example form-horizontal"
-							action="login" >
+							class="bs-example form-horizontal" action="login">
 
 							<fieldset>
-								<legend>Welcome</legend>
+								<legend class="align-middle">Log In</legend>
 
 								<div class="form-group">
 									<label for="username" class="col-lg-3 control-label">UserName
 									</label>
 									<div class="col-lg-9">
-
-										<input type="text"  name="username"
-											id="username" /> -
+										<input type="text" class="form-control" name="username" id="username" />
 									</div>
 								</div>
 
@@ -94,16 +97,18 @@
 									</label>
 									<div class="col-lg-9">
 
-										<input type="password" class="form-control"
-											name="password" id="password" />
-<!-- 									</div> -->
+										<input type="password" class="form-control" name="password"
+											id="password" />
+									</div>
 								</div>
 
 
 								<div class="form-group">
-									<div class="col-lg-10 col-lg-offset-2">
-
+									<div class="col-lg-3">
+									</div>
+									<div class="col-lg-9">
 										<button type="submit" class="btn btn-primary ">Login</button>
+										<a href="register"><button class="btn btn-primary ">Register</button></a>
 									</div>
 								</div>
 							</fieldset>
