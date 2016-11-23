@@ -14,6 +14,8 @@
 	    <intercept-url pattern="/index" access="permitAll()"/>
 		<intercept-url pattern="/register" access="permitAll()"/>
 		<intercept-url pattern="/login" access="permitAll()"/>
+		<intercept-url pattern="/deleteStaff" access="permitAll()" />
+		<intercept-url pattern="/editStaff" access="hasRole('ROLE_ADMIN')" />
 		
 		<intercept-url pattern="/newTicket" access="hasRole('ROLE_STAFF')" />
 		
@@ -22,10 +24,10 @@
 		
 		<intercept-url pattern="/stafflist" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/topic" access="hasRole('ROLE_ADMIN')" />
-			<intercept-url pattern="/ticketList" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/ticketList" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/ticketAssignment" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/editStaff" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/deleteStaff" access="hasRole('ROLE_ADMIN')" />
+	
+		
 		
 		
 		<form-login login-page="/login" 
@@ -34,7 +36,7 @@
 				password-parameter="password"
  			    default-target-url="/Home"    
                always-use-default-target="true"   
-               authentication-failure-url="/loginfailed"/>
+               authentication-failure-url="/loginFailed"/>
 
 		<logout logout-url="/logout" logout-success-url="/login.jsp?logout"
 			delete-cookies="JSESSIONID" invalidate-session="true" />
