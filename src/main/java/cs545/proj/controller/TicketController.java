@@ -12,6 +12,8 @@ import javax.validation.Valid;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -168,8 +170,9 @@ public class TicketController {
 		}
 	}
 
-	@RequestMapping(value = "/editTicket", method = RequestMethod.GET)
-	public String editTicket(@RequestParam(value = "id") int id, Model model) {
+	
+	@RequestMapping(value = "/editTicket={id}", method = RequestMethod.GET)
+	public String editTicket(@PathVariable("id") int id, Model model) {
 		Ticket ticket = new Ticket();
 		ticket = (Ticket) ticketService.getTicketById(id);
 		if (ticket != null) {
@@ -198,7 +201,7 @@ public class TicketController {
 			ticketfromdb.setSubject(ticket.getSubject());
 			ticketfromdb.setTopic(ticket.getTopic());
 			ticketService.TicketRegister(ticketfromdb);
-			return "redirect:/ticketList";
+			return "redirect:ticketList";
 		}
 
 	}

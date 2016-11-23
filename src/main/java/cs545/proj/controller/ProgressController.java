@@ -44,14 +44,11 @@ public class ProgressController {
 
 		TicketProgress tp = new TicketProgress();
 		model.addAttribute("ticketProgress", tp);
-
 		Staff staffs = staffService.getStaffById(id);
 		model.addAttribute("staff_id", staffs);
 
 		model.addAttribute("note", tp.getNote());
-
 		return "ticketProgress";
-
 	}
 
 	@RequestMapping(value = "/ticketProgress", method = RequestMethod.POST)
@@ -87,10 +84,10 @@ public class ProgressController {
 
 			model.addAttribute("ticketProgress", tp);
 
-			String email = staffService.getStaffById(ticketprogress.getStaff_id()).getEmail();
-			String username = staffService.getStaffById(ticketprogress.getStaff_id()).getUsername();
-
-			emailService.assignTicketEmail(email, username, ticketprogress.getId());
+//			String email = staffService.getStaffById(ticketprogress.getStaff_id()).getEmail();
+//			String username = staffService.getStaffById(ticketprogress.getStaff_id()).getUsername();
+//
+//			emailService.assignTicketEmail(email, username, ticketprogress.getId());
 
 			return "redirect:ticketList";
 		}
